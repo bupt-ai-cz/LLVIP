@@ -2,6 +2,8 @@
 
 <center> Xinyu Jia,</center> [Chuang Zhu](https://teacher.bupt.edu.cn/zhuchuang/en/index.htm), Minzhen Li, Wenqi Tang, and Wenli Zhou </center>
 
+[Chuang Zhu](https://teacher.bupt.edu.cn/zhuchuang/en/index.htm)
+
 # [Project](https://bupt-ai-cz.github.io/LLVIP/) | [Arxiv]() |
 
 <img src="imgs/examples.jpg" width="900px"/>
