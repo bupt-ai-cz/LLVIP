@@ -4,7 +4,7 @@
 
   
 <center> 
-  <a href=https://teacher.bupt.edu.cn/zhuchuang/en/index.htm>Chuang Zhu\</a>
+<a href=https://teacher.bupt.edu.cn/zhuchuang/en/index.htm>Chuang Zhu\</a>
 </center>
 
   
