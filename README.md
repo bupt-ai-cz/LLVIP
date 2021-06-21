@@ -6,6 +6,10 @@
 <center> 
 <a href=https://teacher.bupt.edu.cn/zhuchuang/en/index.htm>Chuang Zhu\</a>
 </center>
+  
+<div align=center >
+<a href=https://teacher.bupt.edu.cn/zhuchuang/en/index.htm>Chuang Zhu\</a>
+</div>
 
   
 # [Project](https://bupt-ai-cz.github.io/LLVIP/) | [Arxiv]() |
