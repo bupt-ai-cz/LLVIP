@@ -2,7 +2,9 @@
 
 <center> Xinyu Jia, Chuang Zhu, Minzhen Li, Wenqi Tang, and Wenli Zhou </center>
 
-# <center> [Chuang Zhu](https://teacher.bupt.edu.cn/zhuchuang/en/index.htm)
+<center> 
+  [Chuang Zhu](https://teacher.bupt.edu.cn/zhuchuang/en/index.htm)
+</center>
 
 # [Project](https://bupt-ai-cz.github.io/LLVIP/) | [Arxiv]() |
 
