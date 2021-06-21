@@ -1,11 +1,6 @@
 # <center> LLVIP: A Visible-infrared Paired Dataset for Low-light Vision
 
 <center> Xinyu Jia, Chuang Zhu, Minzhen Li, Wenqi Tang, and Wenli Zhou </center>
-
-  
-<center> 
-<a href=https://teacher.bupt.edu.cn/zhuchuang/en/index.htm>Chuang Zhu\</a>
-</center>
   
 <div align=center >
 <a href=https://teacher.bupt.edu.cn/zhuchuang/en/index.htm>Chuang Zhu\</a>
