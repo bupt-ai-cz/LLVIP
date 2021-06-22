@@ -1,3 +1,4 @@
 branchname: homepage
 git commit index.html
 git push origin homepage    %put the codes to homepage branch
+git rm filename
