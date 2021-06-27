@@ -247,28 +247,28 @@
 
                     var url = 'https://script.google.com/macros/s/AKfycbwUGTZ846r2jbjQ8j1tMYNfzDK4C257rBtMuVzNdNdGt4OqpauN/exec';
 
-                    // var xhr = new XMLHttpRequest();
-                    // xhr.open('POST', url);
-                    // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    // xhr.send(data)
-                    // console.log('response: ' + xhr.response)
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', url);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded", "Access-Control-Allow-Origin:*");
+                    xhr.send(data);
+                    console.log('response: ' + xhr.response);
 
-                    $.post(url, data)
-                        .done(function (data) {
-                            console.log(data);
-                            if (data.result === "error") {
-                                $('#alert-wrapper').html(alert_markup('danger', data.message));
-                                console.log('Error!!!!');
-                            } else {
-                                $('#alert-wrapper').html(alert_markup('info', '<strong>OKKKKKKK!</strong>'));
-                                console.log('OKKKK!!!!');
-                                // $('#rsvp-modal').modal('show');
-                            }
-                        })
-                        .fail(function (data) {
-                            console.log(data);
-                            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-                        });
+                    // $.post(url, data)
+                    //     .done(function (data) {
+                    //         console.log(data);
+                    //         if (data.result === "error") {
+                    //             $('#alert-wrapper').html(alert_markup('danger', data.message));
+                    //             console.log('Error!!!!');
+                    //         } else {
+                    //             $('#alert-wrapper').html(alert_markup('info', '<strong>OKKKKKKK!</strong>'));
+                    //             console.log('OKKKK!!!!');
+                    //             // $('#rsvp-modal').modal('show');
+                    //         }
+                    //     })
+                    //     .fail(function (data) {
+                    //         console.log(data);
+                    //         $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    //     });
                 });
             });
         </script>
