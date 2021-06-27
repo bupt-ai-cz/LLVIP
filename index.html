@@ -1,530 +1,798 @@
-<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
-<script type="text/javascript">google.load("jquery", "1.3.2");</script>
-
-<style type="text/css">
-	body {
-		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-		font-weight:300;
-		font-size:18px;
-		margin-left: auto;
-		margin-right: auto;
-		width: 1100px;
-	}
-	
-	h1 {
-		font-size:32px;
-		font-weight:300;
-	}
-	
-	.disclaimerbox {
-		background-color: #eee;		
-		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-		padding: 20px;
-	}
-
-	video.header-vid {
-		height: 140px;
-		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-	}
-	
-	img.header-img {
-		height: 140px;
-		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-	}
-	
-	img.rounded {
-		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
-	}
-	
-	a:link,a:visited
-	{
-		color: #1367a7;
-		text-decoration: none;
-	}
-	a:hover {
-		color: #208799;
-	}
-	
-	td.dl-link {
-		height: 160px;
-		text-align: center;
-		font-size: 22px;
-	}
-	
-	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
-		15px 15px 0 0px #fff, /* The fourth layer */
-		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
-		20px 20px 0 0px #fff, /* The fifth layer */
-		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
-		25px 25px 0 0px #fff, /* The fifth layer */
-		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
-		margin-left: 10px;
-		margin-right: 45px;
-	}
-
-	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
-
-		margin-left: 10px;
-		margin-right: 45px;
-	}
-
-	.paper-small { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
-
-		margin-left: 10px;
-		margin-right: 25px;
-	}
-
-
-	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
-		margin-top: 5px;
-		margin-left: 10px;
-		margin-right: 30px;
-		margin-bottom: 5px;
-	}
-	
-	.vert-cent {
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-	
-	hr
-	{
-		border: 0;
-		height: 1px;
-		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-	}
-</style>
-
 <html>
-<head>
-	<title>LLVIP: A Visible-infrared Paired Dataset for Low-light Vision</title>
-	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="LLVIP: A Visible-infrared Paired Dataset for Low-light Vision" />
-	<meta property="og:description" content="Paper description." />
+    <head>
+        <title>LLVIP: A Visible-infrared Paired Dataset for Low-light Vision</title>
+        <meta property="og:image" content="Path to my teaser.png"/>
+        <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+        <meta property="og:title" content="LLVIP: A Visible-infrared Paired Dataset for Low-light Vision"/>
+        <meta property="og:description" content="Paper description."/>
 
-	<!-- Get from Google Analytics -->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src=""></script> 
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+        <!-- Get from Google Analytics -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src=""></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-		gtag('config', 'UA-75863369-6');
-	</script>
-</head>
+            function gtag() {
+                dataLayer.push(arguments);
+            }
 
-<body>
-	<br>
-	<center>
-		<span style="font-size:36px">LLVIP: A Visible-infrared Paired Dataset for Low-light Vision</span>
-		<table align=center width=800px>
-			<table align=center width=800px>
-				<tr>
-					<td align=center width=100px>
-						<center>
-							<span style="font-size:24px">	Xinyu Jia</span>
-						</center>
-					</td>
-					<td align=center width=100px>
-						<center>
-							<span style="font-size:24px"><a href="https://teacher.bupt.edu.cn/zhuchuang/en/index.htm">Chuang Zhu<sup>*</sup></a></span>
-						</center>
-					</td>
-					<td align=center width=100px>
-						<center>
-							<span style="font-size:24px">Minzhen Li</span>
-						</center>
-					</td>
-					<td align=center width=100px>
-						<center>
-							<span style="font-size:24px">Wenqi Tang</span>
-						</center>
-					</td>
-					<td align=center width=100px>
-						<center>
-							<span style="font-size:24px">Wenli Zhou</span>
-						</center>
-					</td>
-				</tr>
-			</table>
-			<table align=center width=250px>
-				<tr>
-					<td align=center width=120px>
-						<center>
-							<span style="font-size:24px"><a href=''>[Paper]</a></span>
-						</center>
-					</td>
-					<td align=center width=120px>
-						<center>
-							<span style="font-size:24px"><a href='https://github.com/bupt-ai-cz/LLVIP'>[GitHub]</a></span><br>
-						</center>
-					</td>
-				</tr>
-			</table>
-		</table>
-	</center>
+            gtag('js', new Date());
 
-	<center>
-		<table align=center width=850px>
-			<tr>
-				<td width=260px>
-					<center>
-						<img class="round" style="width:850px" src="./imgs/tasks.jpg"/>
-					</center>
-				</td>
-			</tr>
-		</table>
+            gtag('config', 'UA-75863369-6');
+        </script>
 
-		<!--
-		<table align=center width=850px>
-			<tr>
-				<td>
-					This was a template originally made for <a href="http://richzhang.github.io/colorization/">Colorful Image Colorization</a>. The code can be found in this <a href="https://github.com/richzhang/webpage-template">repository</a>.
-					LLVIP Data Samples
-				</td>
-			</tr>
-		</table>
-		-->
+        <!--        <script src="http://www.google.com/jsapi" type="text/javascript"></script>-->
+        <!--        <script type="text/javascript">google.load("jquery", "1.3.2");</script>-->
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 
-	</center>
 
-	<hr>
+        <style type="text/css">
+            body {
+                font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+                font-weight: 300;
+                font-size: 18px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 1100px;
+            }
 
-	<table align=center width=850px>
-		<center><h1>Abstract</h1></center>
-		<tr>
-			<td>
-				It is a very challenging task to detect pedestrians in visible images under very low-light conditions due to the loss of effective target areas. Visible and infrared fusion can generate a single complementary image that has both rich detail information and effective target areas. In this paper, we present VIP-LF, a visible-infrared paired pedestrian dataset for low-light image fusion. This dataset contains 21664 images, or 10832 pairs, most of which were taken at very dark scenes. All of the images are strictly aligned in time and space.  We evaluate the performance of several image fusion algorithms on the dataset, demonstrating the complementary effect of fusion on image information, and finding the deficiency of existing fusion algorithms. We also benchmark the pedestrian detection on our dataset, and the results of the experiments show that there is still much room for improvement in the detection of pedestrians in very low-light conditions. We believe the VIP-LF dataset will contribute to the community of computer vision by promoting image fusion and pedestrian detection in very low-light applications. In addition, the dataset can also be used to study multi-modal image registration and image style conversion. The dataset is being released and expanded. 
-			</td>
-		</tr>
-	</table>
-	<br>
+            h1 {
+                font-size: 32px;
+                font-weight: 300;
+            }
 
-	<hr>
-	<center><h1>Data Collection and Annotation</h1></center>
-	<p align="center">
-	<!-- <iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe> -->
-	<img class="round" style="width:700px" src="./imgs/capture-registration.jpg"/>
-	</p>
+            .disclaimerbox {
+                background-color: #eee;
+                border: 1px solid #eeeeee;
+                border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                padding: 20px;
+            }
 
-	<!-- 
-	<table align=center width=800px>
-		<br>
-		<tr>
-			<center>
-				<span style="font-size:28px"><a href=''>[Slides]</a>
-				</span>
-			</center>
-		</tr>
-	</table>
-	-->
+            video.header-vid {
+                height: 140px;
+                border: 1px solid black;
+                border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+            }
 
-	<hr>
+            img.header-img {
+                height: 140px;
+                border: 1px solid black;
+                border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+            }
 
-	<center><h1>Download LLVIP</h1></center>
+            img.rounded {
+                border: 1px solid #eeeeee;
+                border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+            }
 
-	<!-- 
-	<table align=center width=420px>
-		<center>
-			<tr>
-				<td>
-				</td>
-			</tr>
-		</center>
-	</table>
-	<table align=center width=400px>
-		<tr>
-			<td align=center width=400px>
-				<center>
-					<td><img class="round" style="width:450px" src="./resources/method_diagram.png"/></td>
-				</center>
-			</td>
-		</tr>
-	</table>
-	-->
+            a:link, a:visited {
+                color: #1367a7;
+                text-decoration: none;
+            }
 
-	<table align=center width=850px>
-		<center>
-			<tr>
-				<td>
-					Short description if wanted
-				</td>
-			</tr>
-		</center>
-	</table>
-	<!-- 
-	<table align=center width=800px>
-		<br>
-		<tr><center>
-			<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
-			</center>
-		</span>
-	</table>
-	<br>
-	-->
-	<section class="rsvp text-center" id="rsvp">
+            a:hover {
+                color: #208799;
+            }
 
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3>Thank you!</h3>
-                        <p>We are glad to see you join us on our big day.</p>
-                        <div id="add-to-cal"></div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            td.dl-link {
+                height: 160px;
+                text-align: center;
+                font-size: 22px;
+            }
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3>What are you waiting for?</h3>
-                <p>We would greatly appreciate if you could RSVP before 1st of November '17</p>
-                <form id="rsvp-form" class="rsvp-form"
-                      action=""
-                      method="POST">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="email" class=""
-                                                                     placeholder="Your email"
-                                                                     required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="name" class=""
-                                                                 placeholder="Your name"
-                                                                 required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
-                                                                  max="4"
-                                                                  placeholder="Husband/Wife or kids"
-                                                                  required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
-                    </div>
-                    <button class="btn-fill rsvp-btn">
-                        Yes,
-                        that's me!
-                    </button>
-                </form>
+            .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+                box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35), /* The top layer shadow */ 5px 5px 0 0px #fff, /* The second layer */ 5px 5px 1px 1px rgba(0, 0, 0, 0.35), /* The second layer shadow */ 10px 10px 0 0px #fff, /* The third layer */ 10px 10px 1px 1px rgba(0, 0, 0, 0.35), /* The third layer shadow */ 15px 15px 0 0px #fff, /* The fourth layer */ 15px 15px 1px 1px rgba(0, 0, 0, 0.35), /* The fourth layer shadow */ 20px 20px 0 0px #fff, /* The fifth layer */ 20px 20px 1px 1px rgba(0, 0, 0, 0.35), /* The fifth layer shadow */ 25px 25px 0 0px #fff, /* The fifth layer */ 25px 25px 1px 1px rgba(0, 0, 0, 0.35); /* The fifth layer shadow */
+                margin-left: 10px;
+                margin-right: 45px;
+            }
+
+            .paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+                box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35); /* The top layer shadow */
+
+                margin-left: 10px;
+                margin-right: 45px;
+            }
+
+            .paper-small { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+                box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35); /* The top layer shadow */
+
+                margin-left: 10px;
+                margin-right: 25px;
+            }
+
+
+            .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+                box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35), /* The top layer shadow */ 5px 5px 0 0px #fff, /* The second layer */ 5px 5px 1px 1px rgba(0, 0, 0, 0.35), /* The second layer shadow */ 10px 10px 0 0px #fff, /* The third layer */ 10px 10px 1px 1px rgba(0, 0, 0, 0.35); /* The third layer shadow */
+                margin-top: 5px;
+                margin-left: 10px;
+                margin-right: 30px;
+                margin-bottom: 5px;
+            }
+
+            .vert-cent {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            hr {
+                border: 0;
+                height: 1px;
+                background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            }
+
+            /*  表单的CSS  */
+            .form-style-1 {
+                margin: 10px auto;
+                max-width: 400px;
+                padding: 20px 12px 10px 20px;
+                font: 16px "Times New Roman", "Times", serif;
+            }
+
+            .form-style-1 li {
+                padding: 0;
+                display: block;
+                list-style: none;
+                margin: 10px 0 0 0;
+            }
+
+            .form-style-1 label {
+                margin: 0 0 3px 0;
+                padding: 0px;
+                display: block;
+                font-weight: bold;
+            }
+
+            .form-style-1 input[type=text],
+            .form-style-1 input[type=date],
+            .form-style-1 input[type=datetime],
+            .form-style-1 input[type=number],
+            .form-style-1 input[type=search],
+            .form-style-1 input[type=time],
+            .form-style-1 input[type=url],
+            .form-style-1 input[type=email],
+            textarea,
+            select {
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                border: 1px solid #BEBEBE;
+                padding: 7px;
+                margin: 0px;
+                -webkit-transition: all 0.30s ease-in-out;
+                -moz-transition: all 0.30s ease-in-out;
+                -ms-transition: all 0.30s ease-in-out;
+                -o-transition: all 0.30s ease-in-out;
+                outline: none;
+            }
+
+            .form-style-1 input[type=text]:focus,
+            .form-style-1 input[type=date]:focus,
+            .form-style-1 input[type=datetime]:focus,
+            .form-style-1 input[type=number]:focus,
+            .form-style-1 input[type=search]:focus,
+            .form-style-1 input[type=time]:focus,
+            .form-style-1 input[type=url]:focus,
+            .form-style-1 input[type=email]:focus,
+            .form-style-1 textarea:focus,
+            .form-style-1 select:focus {
+                -moz-box-shadow: 0 0 8px #88D5E9;
+                -webkit-box-shadow: 0 0 8px #88D5E9;
+                box-shadow: 0 0 8px #88D5E9;
+                border: 1px solid #88D5E9;
+            }
+
+            .form-style-1 .field-divided {
+                width: 49%;
+            }
+
+            .form-style-1 .field-long {
+                width: 100%;
+            }
+
+            .form-style-1 .field-select {
+                width: 100%;
+            }
+
+            .form-style-1 .field-textarea {
+                height: 100px;
+            }
+
+            .form-style-1 input[type=submit], .form-style-1 input[type=button] {
+                background: #4B99AD;
+                padding: 8px 15px 8px 15px;
+                border: none;
+                color: #fff;
+            }
+
+            .form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover {
+                background: #4691A4;
+                box-shadow: none;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+            }
+
+            .form-style-1 .required {
+                color: red;
+            }
+
+        </style>
+
+        <script>
+            <!--      表单提交的JS      -->
+            // $(function () {
+            //     $('#rsvp-form').submit(function () {
+            //         alert('HAHA');
+            //     });
+            // });
+            function alert_markup(alert_type, msg) {
+                return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
+            }
+
+            $(function () {
+                $('#rsvp-form').on('submit', function (e) {
+                    e.preventDefault();
+                    var data = $(this).serialize();
+                    console.log('data: ' + data);
+
+                    $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+
+                    var url = 'https://script.google.com/macros/s/AKfycbwUGTZ846r2jbjQ8j1tMYNfzDK4C257rBtMuVzNdNdGt4OqpauN/exec';
+
+                    // var xhr = new XMLHttpRequest();
+                    // xhr.open('POST', url);
+                    // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    // xhr.send(data)
+                    // console.log('response: ' + xhr.response)
+
+                    $.post(url, data)
+                        .done(function (data) {
+                            console.log(data);
+                            if (data.result === "error") {
+                                $('#alert-wrapper').html(alert_markup('danger', data.message));
+                                console.log('Error!!!!');
+                            } else {
+                                $('#alert-wrapper').html(alert_markup('info', '<strong>OKKKKKKK!</strong>'));
+                                console.log('OKKKK!!!!');
+                                // $('#rsvp-modal').modal('show');
+                            }
+                        })
+                        .fail(function (data) {
+                            console.log(data);
+                            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                        });
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <br>
+        <center>
+            <span style="font-size:36px">LLVIP: A Visible-infrared Paired Dataset for Low-light Vision</span>
+            <table align=center width=800px>
+                <table align=center width=800px>
+                    <tr>
+                        <td align=center width=100px>
+                            <center>
+                                <span style="font-size:24px">	Xinyu Jia</span>
+                            </center>
+                        </td>
+                        <td align=center width=100px>
+                            <center>
+                                <span style="font-size:24px"><a
+                                        href="https://teacher.bupt.edu.cn/zhuchuang/en/index.htm">Chuang Zhu<sup>*</sup></a></span>
+                            </center>
+                        </td>
+                        <td align=center width=100px>
+                            <center>
+                                <span style="font-size:24px">Minzhen Li</span>
+                            </center>
+                        </td>
+                        <td align=center width=100px>
+                            <center>
+                                <span style="font-size:24px">Wenqi Tang</span>
+                            </center>
+                        </td>
+                        <td align=center width=100px>
+                            <center>
+                                <span style="font-size:24px">Wenli Zhou</span>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+                <table align=center width=250px>
+                    <tr>
+                        <td align=center width=120px>
+                            <center>
+                                <span style="font-size:24px"><a href=''>[Paper]</a></span>
+                            </center>
+                        </td>
+                        <td align=center width=120px>
+                            <center>
+                                <span style="font-size:24px"><a href='https://github.com/bupt-ai-cz/LLVIP'>[GitHub]</a></span><br>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+            </table>
+        </center>
+
+        <center>
+            <table align=center width=850px>
+                <tr>
+                    <td width=260px>
+                        <center>
+                            <img class="round" style="width:850px" src="./imgs/tasks.jpg"/>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+
+            <!--
+            <table align=center width=850px>
+                <tr>
+                    <td>
+                        This was a template originally made for <a href="http://richzhang.github.io/colorization/">Colorful Image Colorization</a>. The code can be found in this <a href="https://github.com/richzhang/webpage-template">repository</a>.
+                        LLVIP Data Samples
+                    </td>
+                </tr>
+            </table>
+            -->
+
+        </center>
+
+        <hr>
+
+        <table align=center width=850px>
+            <center><h1>Abstract</h1></center>
+            <tr>
+                <td>
+                    It is a very challenging task to detect pedestrians in visible images under very low-light
+                    conditions due to the loss of effective target areas. Visible and infrared fusion can generate a
+                    single complementary image that has both rich detail information and effective target areas. In this
+                    paper, we present VIP-LF, a visible-infrared paired pedestrian dataset for low-light image fusion.
+                    This dataset contains 21664 images, or 10832 pairs, most of which were taken at very dark scenes.
+                    All of the images are strictly aligned in time and space. We evaluate the performance of several
+                    image fusion algorithms on the dataset, demonstrating the complementary effect of fusion on image
+                    information, and finding the deficiency of existing fusion algorithms. We also benchmark the
+                    pedestrian detection on our dataset, and the results of the experiments show that there is still
+                    much room for improvement in the detection of pedestrians in very low-light conditions. We believe
+                    the VIP-LF dataset will contribute to the community of computer vision by promoting image fusion and
+                    pedestrian detection in very low-light applications. In addition, the dataset can also be used to
+                    study multi-modal image registration and image style conversion. The dataset is being released and
+                    expanded.
+                </td>
+            </tr>
+        </table>
+        <br>
+
+        <hr>
+        <center><h1>Data Collection and Annotation</h1></center>
+        <p align="center">
+            <!-- <iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe> -->
+            <img class="round" style="width:700px" src="./imgs/capture-registration.jpg"/>
+        </p>
+
+        <!--
+        <table align=center width=800px>
+            <br>
+            <tr>
+                <center>
+                    <span style="font-size:28px"><a href=''>[Slides]</a>
+                    </span>
+                </center>
+            </tr>
+        </table>
+        -->
+
+        <hr>
+
+        <center>
+            <h1>Download LLVIP</h1>
+            <p>Provide your information to get access to the dataset</p>
+        </center>
+
+        <section class="rsvp text-center" id="rsvp">
+            <form id="rsvp-form" class="rsvp-form" action="" method="POST">
+                <ul class="form-style-1">
+                    <li>
+                        <label>Full Name</label>
+                        <input type="text" name="Name" class="field-long" required/>
+                    </li>
+                    <li>
+                        <label>Email</label>
+                        <input type="email" name="Email" class="field-long" required/>
+                    </li>
+                    <li>
+                        <label>Company/Institution</label>
+                        <input type="text" name="Company/Institution" class="field-long" required/>
+                    </li>
+                    <li>
+                        <label>Country/Region</label>
+                        <select name="Country/Region" class="field-select" required>
+                            <option label="Afghanistan" value="AF">Afghanistan</option>
+                            <option label="Anguilla" value="AI">Anguilla</option>
+                            <option label="Armenia" value="AM">Armenia</option>
+                            <option label="Aruba" value="AW">Aruba</option>
+                            <option label="Australia" value="AU">Australia</option>
+                            <option label="Austria" value="AT">Austria</option>
+                            <option label="Azerbaijan" value="AZ">Azerbaijan</option>
+                            <option label="Bahamas" value="BS">Bahamas</option>
+                            <option label="Bahrain" value="BH">Bahrain</option>
+                            <option label="Bangladesh" value="BD">Bangladesh</option>
+                            <option label="Barbados" value="BB">Barbados</option>
+                            <option label="Belarus" value="BY">Belarus</option>
+                            <option label="Belgium" value="BE">Belgium</option>
+                            <option label="Belize" value="BZ">Belize</option>
+                            <option label="Benin" value="BJ">Benin</option>
+                            <option label="Bermuda" value="BM">Bermuda</option>
+                            <option label="Bhutan" value="BT">Bhutan</option>
+                            <option label="Bolivia" value="BO">Bolivia</option>
+                            <option label="Bouvet Islands" value="BV">Bouvet Islands</option>
+                            <option label="Brazil" value="BR">Brazil</option>
+                            <option label="British Indian Ocean Territory" value="IO">British Indian Ocean Territory</option>
+                            <option label="British Virgin Islands" value="VI">British Virgin Islands</option>
+                            <option label="Brunei" value="BN">Brunei</option>
+                            <option label="Bulgaria" value="BG">Bulgaria</option>
+                            <option label="Burkina Faso" value="BF">Burkina Faso</option>
+                            <option label="Burundi" value="BI">Burundi</option>
+                            <option label="Cambodia" value="KH">Cambodia</option>
+                            <option label="Cameroon" value="CM">Cameroon</option>
+                            <option label="Canada" value="CA">Canada</option>
+                            <option label="Cape Verde" value="CV">Cape Verde</option>
+                            <option label="Cayman Islands" value="KY">Cayman Islands</option>
+                            <option label="Central African Republic" value="CF">Central African Republic</option>
+                            <option label="Chad" value="TD">Chad</option>
+                            <option label="Chile" value="CL">Chile</option>
+                            <option label="China" value="CN">China</option>
+                            <option label="Colombia" value="CO">Colombia</option>
+                            <option label="Comoros" value="KM">Comoros</option>
+                            <option label="Congo" value="CG">Congo</option>
+                            <option label="Costa Rica" value="CR">Costa Rica</option>
+                            <option label="Cote D'Ivorie" value="CI">Cote D'Ivorie</option>
+                            <option label="Croatia" value="HR">Croatia</option>
+                            <option label="Cyprus" value="CY">Cyprus</option>
+                            <option label="Czech Republic" value="CZ">Czech Republic</option>
+                            <option label="Denmark" value="DK">Denmark</option>
+                            <option label="Djibouti" value="DJ">Djibouti</option>
+                            <option label="Dominica" value="DM">Dominica</option>
+                            <option label="Dominican Republic" value="DO">Dominican Republic</option>
+                            <option label="Egypt" value="EG">Egypt</option>
+                            <option label="El Salvador" value="SV">El Salvador</option>
+                            <option label="Equador" value="EC">Equador</option>
+                            <option label="Equatorial Guinea" value="GQ">Equatorial Guinea</option>
+                            <option label="Eritrea" value="ER">Eritrea</option>
+                            <option label="Estonia" value="EE">Estonia</option>
+                            <option label="Ethiopia" value="ET">Ethiopia</option>
+                            <option label="Falkland Islands" value="FK">Falkland Islands</option>
+                            <option label="Faroe Islands" value="FO">Faroe Islands</option>
+                            <option label="Federated States of Micronesia" value="FM">Federated States of mironesia</option>
+                            <option label="Fiji" value="FJ">Fiji</option>
+                            <option label="Finland" value="FI">Finland</option>
+                            <option label="France" value="FR">France</option>
+                            <option label="French Guiana" value="GF">French Guiana</option>
+                            <option label="French Polynesia" value="PF">French Polynesia</option>
+                            <option label="Gabon" value="GA">Gabon</option>
+                            <option label="Gambia" value="GM">Gambia</option>
+                            <option label="Georgia" value="GE">Georgia</option>
+                            <option label="Germany" value="DE">Germany</option>
+                            <option label="Ghana" value="GH">Ghana</option>
+                            <option label="Gibraltar" value="GI">Gibraltar</option>
+                            <option label="Greece" value="GR">Greece</option>
+                            <option label="Greenland" value="GL">Greenland</option>
+                            <option label="Grenada" value="GD">Grenada</option>
+                            <option label="Guadeloupe" value="GP">Guadeloupe</option>
+                            <option label="Guam" value="GU">Guam</option>
+                            <option label="Guatemala" value="GT">Guatemala</option>
+                            <option label="Guinea" value="GN">Guinea</option>
+                            <option label="Guinea-Bissau" value="GW">Guinea-Bissau</option>
+                            <option label="Guyana" value="GY">Guyana</option>
+                            <option label="Haiti" value="HT">Haiti</option>
+                            <option label="Honduras" value="HN">Honduras</option>
+                            <option label="Hong Kong" value="HK">Hong Kong</option>
+                            <option label="Hungary" value="HU">Hungary</option>
+                            <option label="Iceland" value="IS">Iceland</option>
+                            <option label="India" value="IN">India</option>
+                            <option label="Indonesia" value="ID">Indonesia</option>
+                            <option label="Ireland, Republic of" value="IE">Republic of Ireland</option>
+                            <option label="Israel" value="IL">Israel</option>
+                            <option label="Italy" value="IT">Italy</option>
+                            <option label="Jamaica" value="JM">Jamaica</option>
+                            <option label="Japan" value="JP">Japan</option>
+                            <option label="Jordan" value="JO">Jordan</option>
+                            <option label="Kazakhstan" value="KZ">Kazakhstan</option>
+                            <option label="Kenya" value="KE">Kenya</option>
+                            <option label="Kiribati" value="KI">Kiribati</option>
+                            <option label="Kuwait" value="KW">Kuwait</option>
+                            <option label="Kyrgyzstan" value="KG">Kyrgyzstan</option>
+                            <option label="Laos" value="LA">Laos</option>
+                            <option label="Latvia" value="LV">Latvia</option>
+                            <option label="Lebanon" value="LB">Lebanon</option>
+                            <option label="Lesotho" value="LS">Lesotho</option>
+                            <option label="Liberia" value="LR">Liberia</option>
+                            <option label="Liechtenstein" value="LI">Liechtenstein</option>
+                            <option label="Lithuania" value="LT">Lithuania</option>
+                            <option label="Luxembourg" value="LU">Luxembourg</option>
+                            <option label="Macau" value="MO">Macau</option>
+                            <option label="Madagascar" value="MG">Madagascar</option>
+                            <option label="Malawi" value="MW">Malawi</option>
+                            <option label="Malaysia" value="MY">Malaysia</option>
+                            <option label="Maldives" value="MV">Maldives</option>
+                            <option label="Mali" value="ML">Mali</option>
+                            <option label="Malta" value="MT">Malta</option>
+                            <option label="Marshall Islands" value="MH">Marshall Islands</option>
+                            <option label="Martinique" value="MQ">Martinique</option>
+                            <option label="Mauritania" value="MR">Mauritania</option>
+                            <option label="Mayotte" value="YT">Mayotte</option>
+                            <option label="Metropolitan France" value="FX">Metropolitan France</option>
+                            <option label="Mexico" value="MX">Mexico</option>
+                            <option label="Moldova" value="MD">Moldova</option>
+                            <option label="Mongolia" value="MN">Mongolia</option>
+                            <option label="Morocco" value="MA">Morocco</option>
+                            <option label="Mozambique" value="MZ">Mozambique</option>
+                            <option label="Namibia" value="NA">Namibia</option>
+                            <option label="Nauru" value="NR">Nauru</option>
+                            <option label="Nepal" value="NP">Nepal</option>
+                            <option label="Neterlands Antilles" value="AN">Neterlands Antilles</option>
+                            <option label="Netherlands" value="NL">Netherlands</option>
+                            <option label="New Caledonia" value="NC">New Caledonia</option>
+                            <option label="New Zealand" value="NZ">New Zealand</option>
+                            <option label="Nicaragua" value="NI">Nicaragua</option>
+                            <option label="Niger" value="NE">Niger</option>
+                            <option label="Nigeria" value="NG">Nigeria</option>
+                            <option label="Northern Mariana Islands" value="MP">Northern Mariana Islands</option>
+                            <option label="Norway" value="NO">Norway</option>
+                            <option label="Oman" value="OM">Oman</option>
+                            <option label="Pakistan" value="PK">Pakistan</option>
+                            <option label="Palau" value="PW">Palau</option>
+                            <option label="Panama" value="PA">Panama</option>
+                            <option label="Papua New Guinea" value="PG">Papua New Guinea</option>
+                            <option label="Paraguay" value="PY">Paraguay</option>
+                            <option label="Peru" value="PE">Peru</option>
+                            <option label="Philippines" value="PH">Philippines</option>
+                            <option label="Pitcairn" value="PN">Pitcairn</option>
+                            <option label="Poland" value="PL">Poland</option>
+                            <option label="Portugal" value="PT">Portugal</option>
+                            <option label="Puerto Rico" value="PR">Puerto Rico</option>
+                            <option label="Qatar" value="QA">Qatar</option>
+                            <option label="Republic of Korea" value="KR">Republic of Korea</option>
+                            <option label="Republic of Macedonia" value="MK">Republic of Macedonia</option>
+                            <option label="Reunion" value="RE">Reunion</option>
+                            <option label="Romania" value="RO">Romania</option>
+                            <option label="Russia" value="RU">Russia</option>
+                            <option label="Sao Tome and Principe" value="ST">Sao Tome and Principe</option>
+                            <option label="Saudi Arabia" value="SA">Saudi Arabia</option>
+                            <option label="Senegal" value="SN">Senegal</option>
+                            <option label="Seychelles" value="SC">Seychelles</option>
+                            <option label="Singapore" value="SG">Singapore</option>
+                            <option label="Slovakia" value="SK">Slovakia</option>
+                            <option label="Slovenia" value="SI">Slovenia</option>
+                            <option label="Solomon Islands" value="SB">Solomon Islands</option>
+                            <option label="Somalia" value="SO">Somalia</option>
+                            <option label="South Africa" value="ZA">South Africa</option>
+                            <option label="Spain" value="ES">Spain</option>
+                            <option label="Sri Lanka" value="LK">Sri Lanka</option>
+                            <option label="St. Helena" value="SH">St. Helena</option>
+                            <option label="St. Kitts and Nevis" value="KN">St. Kitts and Nevis</option>
+                            <option label="St. Lucia" value="LC">St. Lucia</option>
+                            <option label="St. Vincent and the Grenadines" value="VC">St. Vincent and the Grenadines</option>
+                            <option label="Sudan" value="SD">Sudan</option>
+                            <option label="Suriname" value="SR">Suriname</option>
+                            <option label="Svalbard and Jan Mayen Islands" value="SJ">Svalbard and Jan Mayen Islands</option>
+                            <option label="Swaziland" value="SZ">Swaziland</option>
+                            <option label="Sweden" value="SE">Sweden</option>
+                            <option label="Switzerland" value="CH">Switzerland</option>
+                            <option label="Syria" value="SY">Syria</option>
+                            <option label="Taiwan" value="TW">Taiwan</option>
+                            <option label="Tajikistan" value="TJ">Tajikistan</option>
+                            <option label="Tanzania" value="TZ">Tanzania</option>
+                            <option label="Thailand" value="TH">Thailand</option>
+                            <option label="Togo" value="TG">Togo</option>
+                            <option label="Tonga" value="TO">Tonga</option>
+                            <option label="Trinidad and Tobago" value="TT">Trinidad and Tobago</option>
+                            <option label="Turkey" value="TR">Turkey</option>
+                            <option label="Turkmenistan" value="TM">Turkmenistan</option>
+                            <option label="Turks and Caicos Islands" value="TC">Turks and Caicos Islands</option>
+                            <option label="Tuvalu" value="TV">Tuvalu</option>
+                            <option label="Uganda" value="UG">Uganda</option>
+                            <option label="Ukraine" value="UA">Ukraine</option>
+                            <option label="United Arab Emirates" value="AE">United Arab Emirates</option>
+                            <option label="United Kingdom" value="GB">United Kingdom</option>
+                            <option label="United States USA" value="US">United States USA</option>
+                            <option label="Uruguay" value="UY">Uruguay</option>
+                            <option label="Uzbekistan" value="UZ">Uzbekistan</option>
+                            <option label="Vanuatu" value="VU">Vanuatu</option>
+                            <option label="Vatican City" value="VA">Vatican City</option>
+                            <option label="Venezuela" value="VE">Venezuela</option>
+                            <option label="Vietnam" value="VN">Vietnam</option>
+                            <option label="Western Sahara" value="EH">Western Sahara</option>
+                            <option label="Yemen" value="YE">Yemen</option>
+                            <option label="Yugoslavia" value="YU">Yugoslavia</option>
+                            <option label="Zaire" value="ZR">Zaire</option>
+                            <option label="Zambia" value="ZM">Zambia</option>
+                            <option label="Zimbabwe" value="ZW">Zimbabwe</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input type="submit" value="Submit"/>
+                    </li>
+                </ul>
+            </form>
+
+            <!--      测试代码      -->
+            <div class="row">
+                <div class="col-md-12" id="alert-wrapper"></div>
             </div>
-        </div>
-    </div>
-</section>
-	
-	
-	
 
-	<hr>
+        </section>
 
-	<table align=center width=450px>
-		<center><h1>Publications</h1></center>
-		<tr>
-			<td><a href=""><img class="paper-small" style="height:95px" src="./resources/paper.png"/></a></td>
-			<td><span style="font-size:14pt">F. Author, S. Author, T. Author.<br>
+        <hr>
+
+        <table align=center width=450px>
+            <center><h1>Publications</h1></center>
+            <tr>
+                <td><a href=""><img class="paper-small" style="height:95px" src="./resources/paper.png"/></a></td>
+                <td>
+                    <span style="font-size:14pt">F. Author, S. Author, T. Author.<br>
 				<b>Creative and Descriptive Paper Title. In Conference, 20XX.</b><br>
-			</td>
-		</tr>
-	</table>
-	<br>
+                    </span>
+                </td>
+            </tr>
+        </table>
+        <br>
 
 
-	<!-- 
-	<table align=center width=600px>
-		<tr>
-			<td><span style="font-size:14pt"><center>
-				<a href="./resources/bibtex.txt">[Bibtex]</a>
-			</center></td>
-		</tr>
-	</table>
-	-->
+        <!--
+        <table align=center width=600px>
+            <tr>
+                <td><span style="font-size:14pt"><center>
+                    <a href="./resources/bibtex.txt">[Bibtex]</a>
+                </center></td>
+            </tr>
+        </table>
+        -->
 
-	<hr>
-	<br>
+        <hr>
+        <br>
 
-	<center><h1>Applications and Baselines</h1></center>
+        <center><h1>Applications and Baselines</h1></center>
 
-	<table align=center width=420px>
-		<center>
-			<tr>
-				<td>
-				</td>
-			</tr>
-		</center>
-	</table>
-	<table align=center width=400px>
-		<tr>
-			<td align=center width=400px>
-				<center>
-					<td><img class="round" style="width:850px" src="./imgs/tasks.jpg"/></td>
-				</center>
-			</td>
-		</tr>
-	</table>
+        <table align=center width=420px>
+            <center>
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+            </center>
+        </table>
+        <table align=center width=400px>
+            <tr>
+                <td align=center width=400px>
+                    <center>
+                        <img class="round" style="width:850px" src="./imgs/tasks.jpg"/>
+                    </center>
+                </td>
+            </tr>
+        </table>
 
-	<hr>
-	<br>
+        <hr>
+        <br>
 
-	<center><h1>Image Translations</h1></center>
-	<table align=center width=420px>
-		<center>
-			<tr>
-				<td>
-				</td>
-			</tr>
-		</center>
-	</table>
-	<table align=center width=400px>
-		<tr>
-			<td align=center width=400px>
-				<center>
-					<td><img class="round" style="width:450px" src="./resources/method_diagram.png"/></td>
-				</center>
-			</td>
-		</tr>
-	</table>
-	<table align=center width=850px>
-		<center>
-			<tr>
-				<td>
-					Short description if wanted
-				</td>
-			</tr>
-		</center>
-	</table>
-	<hr>
-	<br>
-
-
-	<center><h1>Image Fusion</h1></center>
-	<table align=center width=420px>
-		<center>
-			<tr>
-				<td>
-				</td>
-			</tr>
-		</center>
-	</table>
-	<table align=center width=400px>
-		<tr>
-			<td align=center width=400px>
-				<center>
-					<td><img class="round" style="width:850px" src="./imgs/fusion.jpg"/></td>
-				</center>
-			</td>
-		</tr>
-	</table>
-	<table align=center width=850px>
-		<center>
-			<tr>
-				<td>
-					Short description if wanted
-				</td>
-			</tr>
-		</center>
-	</table>
-
-	<hr>
-	<br>
+        <center><h1>Image Translations</h1></center>
+        <table align=center width=420px>
+            <center>
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+            </center>
+        </table>
+        <table align=center width=400px>
+            <tr>
+                <td align=center width=400px>
+                    <center>
+                        <img class="round" style="width:450px" src="./resources/method_diagram.png"/>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <table align=center width=850px>
+            <center>
+                <tr>
+                    <td>
+                        Short description if wanted
+                    </td>
+                </tr>
+            </center>
+        </table>
+        <hr>
+        <br>
 
 
-	<center><h1>(Low-light) Pedestrian Detection</h1></center>
-	<table align=center width=420px>
-		<center>
-			<tr>
-				<td>
-				</td>
-			</tr>
-		</center>
-	</table>
-	<table align=center width=400px>
-		<tr>
-			<td align=center width=400px>
-				<center>
-					<td><img class="round" style="width:850px" src="./imgs/detection.jpg"/></td>
-				</center>
-			</td>
-		</tr>
-	</table>
-	<table align=center width=850px>
-		<center>
-			<tr>
-				<td>
-					Short description if wanted
-				</td>
-			</tr>
-		</center>
-	</table>
+        <center><h1>Image Fusion</h1></center>
+        <table align=center width=420px>
+            <center>
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+            </center>
+        </table>
+        <table align=center width=400px>
+            <tr>
+                <td align=center width=400px>
+                    <center>
+                        <img class="round" style="width:850px" src="./imgs/fusion.jpg"/>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <table align=center width=850px>
+            <center>
+                <tr>
+                    <td>
+                        Short description if wanted
+                    </td>
+                </tr>
+            </center>
+        </table>
+
+        <hr>
+        <br>
 
 
+        <center><h1>(Low-light) Pedestrian Detection</h1></center>
+        <table align=center width=420px>
+            <center>
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+            </center>
+        </table>
+        <table align=center width=400px>
+            <tr>
+                <td align=center width=400px>
+                    <center>
+                        <img class="round" style="width:850px" src="./imgs/detection.jpg"/>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <table align=center width=850px>
+            <center>
+                <tr>
+                    <td>
+                        Short description if wanted
+                    </td>
+                </tr>
+            </center>
+        </table>
 
-	<hr>
-	<br>
-	<table align=center width=900px>
-		<tr>
-			<td width=400px>
-				<left>
-					<center><h1>Acknowledgements</h1></center>
-					Thanks to people who contribute to label the data: name1, name2, name3, name4.
-				</left>
-			</td>
-		</tr>
-	</table>
 
-<br>
-</body>
+        <hr>
+        <br>
+        <table align=center width=900px>
+            <tr>
+                <td width=400px>
+                    <left>
+                        <center><h1>Acknowledgements</h1></center>
+                        Thanks to people who contribute to label the data: name1, name2, name3, name4.
+                    </left>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+    </body>
 </html>
 
