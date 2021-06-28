@@ -65,7 +65,8 @@ function show_alert(message, color) {
 // google validation
 function onloadCallback() {
     widgetId = grecaptcha.render('validation', {
-        "sitekey": "6LcU6F8bAAAAACGktwCtXY7e1XfIBVjjnqtwjPxi",
+        // "sitekey": "6LcU6F8bAAAAACGktwCtXY7e1XfIBVjjnqtwjPxi",  // localhost
+        "sitekey": "6LfAzWAbAAAAAOcS8mv2Yq7RK6eso_w9yJXerkfm",  // bupt-ai-cz.github.io
     });
 }
 
