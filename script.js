@@ -8,7 +8,8 @@ $(function () {
         } else {
             var data = $(this).serialize();
             // console.log('data: ' + data);
-            var url = 'https://script.google.com/macros/s/AKfycbyKdvyiGN5rrad2hNY48xJvXRC5ox3aA-JhfVmEKRVd0GrFX5EaF-IXKuSsJheI3clPpQ/exec';
+            // var url = 'https://script.google.com/macros/s/AKfycbyKdvyiGN5rrad2hNY48xJvXRC5ox3aA-JhfVmEKRVd0GrFX5EaF-IXKuSsJheI3clPpQ/exec';  // 我的测试数据集接口
+            var url = 'https://script.google.com/macros/s/AKfycbxPv8wm03au2Oo8MU76MN-Zk6xIpeTdHRoUnznyUzf50GpXy5H3vBQxh3ngBpB0DPBt/exec'; // 公开邮箱的数据集表格接口
 
             show_alert("<strong>Hold on! </strong> We are storing your information.", "#47A8F5");
 
