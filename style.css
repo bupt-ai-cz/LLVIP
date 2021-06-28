@@ -200,6 +200,8 @@ select {
     padding: 20px;
     color: white;
     background-color: #4B99AD;
+    margin-bottom: 5px;
+    border-radius: 5px;
 }
 
 .closebtn {
@@ -215,4 +217,19 @@ select {
 
 .closebtn:hover {
     color: black;
+}
+
+/* License */
+#license {
+    font-size: 16px;
+}
+
+#license li {
+    margin-top: 10px;
+}
+
+
+/* Validation */
+#validation {
+    margin-top: 15px;
 }
