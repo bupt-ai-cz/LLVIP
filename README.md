@@ -1,7 +1,7 @@
 # LLVIP: A Visible-infrared Paired Dataset for Low-light Vision 
 [Project](https://bupt-ai-cz.github.io/LLVIP/) | [Arxiv]() |
 
-<img src="imgs/figure1-small.jpg" width="900px"/>
+<img src="imgs/figure1-small.pdf" width="900px"/>
 
 ## Introduction
 
