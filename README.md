@@ -1,7 +1,7 @@
 # LLVIP: A Visible-infrared Paired Dataset for Low-light Vision 
-[Project](https://bupt-ai-cz.github.io/LLVIP/) | [Arxiv]() |
+[Project](https://bupt-ai-cz.github.io/LLVIP/) | [Arxiv](https://arxiv.org/abs/2108.10831)
 
-<img src="imgs/figure1-LS.png" width="900px"/>
+![figure1-LR](imgs/figure1-LR.png)
 
 ## Introduction
 
@@ -9,14 +9,30 @@ It is very challenging for various visual tasks such as image fusion, pedestrian
 
 ## Baselines
 
-
+1. Image Fusion
+   - [GTF](https://www.sciencedirect.com/science/article/pii/S156625351630001X?via%3Dihub)
+   - [FusionGAN](https://www.sciencedirect.com/science/article/pii/S1566253518301143)
+   - [Densefuse](https://arxiv.org/abs/1804.08361)
+   - [IFCNN](https://www.sciencedirect.com/science/article/pii/S1566253518305505)
+2. Pedestrian Detection
+   - [Yolov5](https://github.com/ultralytics/yolov5)
+   - [Yolov3](https://arxiv.org/abs/1804.02767)
+3. Image-to-image Translation
+   - [pix2pixGAN](https://arxiv.org/abs/1611.07004)
 
 
 ## Citation
-If you use this data for your research, please cite our paper <a href="https">LLVIP: A Visible-infrared Paired Dataset for Low-light Vision</a>:
+If you use this data for your research, please cite our paper [LLVIP: A Visible-infrared Paired Dataset for Low-light Vision](https://arxiv.org/abs/2108.10831):
 
 ```
-
+@misc{jia2021llvip,
+      title={LLVIP: A Visible-infrared Paired Dataset for Low-light Vision}, 
+      author={Xinyu Jia and Chuang Zhu and Minzhen Li and Wenqi Tang and Wenli Zhou},
+      year={2021},
+      eprint={2108.10831},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 ## License
