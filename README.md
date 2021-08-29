@@ -25,13 +25,11 @@ It is very challenging for various visual tasks such as image fusion, pedestrian
 If you use this data for your research, please cite our paper [LLVIP: A Visible-infrared Paired Dataset for Low-light Vision](https://arxiv.org/abs/2108.10831):
 
 ```
-@misc{jia2021llvip,
-      title={LLVIP: A Visible-infrared Paired Dataset for Low-light Vision}, 
-      author={Xinyu Jia and Chuang Zhu and Minzhen Li and Wenqi Tang and Wenli Zhou},
-      year={2021},
-      eprint={2108.10831},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{jia2021llvip,
+  title={LLVIP: A Visible-infrared Paired Dataset for Low-light Vision},
+  author={Jia, Xinyu and Zhu, Chuang and Li, Minzhen and Tang, Wenqi and Zhou, Wenli},
+  journal={arXiv preprint arXiv:2108.10831},
+  year={2021}
 }
 ```
 
