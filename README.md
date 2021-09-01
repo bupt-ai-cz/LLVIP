@@ -1,6 +1,10 @@
 # LLVIP: A Visible-infrared Paired Dataset for Low-light Vision
 [Project](https://bupt-ai-cz.github.io/LLVIP/) | [Arxiv](https://arxiv.org/abs/2108.10831) | [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Codes%20and%20Data%20for%20Our%20Paper:%20"LLVIP:%20A%20Visible-infrared%20Paired%20Dataset%20for%20Low-light%20Vision"%20&url=https://github.com/bupt-ai-cz/LLVIP)
 
+## News
+
+- (2021-09-01): We release the dataset, please visit [homepage](https://bupt-ai-cz.github.io/LLVIP/) for access to the dataset.
+
 ![figure1-LR](imgs/figure1-LR.png)
 
 ## Abstract
