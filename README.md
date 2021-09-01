@@ -3,7 +3,7 @@
 
 ## News
 
-- (2021-09-01): We release the dataset, please visit [homepage](https://bupt-ai-cz.github.io/LLVIP/) for access to the dataset.
+- (2021-09-01): We have released the dataset V1.0, please visit [homepage](https://bupt-ai-cz.github.io/LLVIP/) for access to the dataset.
 
 ---
 
