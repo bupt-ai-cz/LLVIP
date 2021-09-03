@@ -48,4 +48,4 @@ Welcome to point out errors in data annotation. Also welcome to contribute more 
 
 ## Contact
 
-email: czhu@bupt.edu.cn, jiaxinyujxy@qq.com, tangwenqi@bupt.edu.cn, or bupt-ai-cz@gmail.com
+email: czhu@bupt.edu.cn, jiaxinyujxy@qq.com, tangwenqi@bupt.edu.cn, or bupt.ai.cz@gmail.com
