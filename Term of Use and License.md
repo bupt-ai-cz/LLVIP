@@ -15,4 +15,4 @@ This LLVIP Dataset is made freely available to academic and non-academic entitie
 
 ## Privacy
 
-We will take care to remove personally identifiable information, and we have blurred some person faces. Furthermore, we prohibit you from using the Datasets in any manner to identify or invade the privacy of any person. If you have any privacy concerns, including to remove your information from the Dataset, please contact us by sending an e-mail to jiaxinyujxy@qq.com, czhu@bupt.edu.cn, tangwenqi@bupt.edu.cn, or bupt-ai-cz@gmail.com
+We will take care to remove personally identifiable information, and we have blurred some person faces. Furthermore, we prohibit you from using the Datasets in any manner to identify or invade the privacy of any person. If you have any privacy concerns, including to remove your information from the Dataset, please contact us by sending an e-mail to jiaxinyujxy@qq.com, czhu@bupt.edu.cn, tangwenqi@bupt.edu.cn, or bupt.ai.cz@gmail.com
