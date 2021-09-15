@@ -16,15 +16,15 @@ It is very challenging for various visual tasks such as image fusion, pedestrian
 ## Baselines
 
 1. Image Fusion
-   - [GTF](https://www.sciencedirect.com/science/article/pii/S156625351630001X?via%3Dihub)
-   - [FusionGAN](https://www.sciencedirect.com/science/article/pii/S1566253518301143)
-   - [Densefuse](https://arxiv.org/abs/1804.08361)
-   - [IFCNN](https://www.sciencedirect.com/science/article/pii/S1566253518305505)
+   - [GTF](https://github.com/jiayi-ma/GTF)
+   - [FusionGAN](https://github.com/jiayi-ma/FusionGAN)
+   - [Densefuse](https://github.com/hli1221/imagefusion_densefuse)
+   - [IFCNN](https://github.com/uzeful/IFCNN)
 2. Pedestrian Detection
    - [Yolov5](https://github.com/ultralytics/yolov5)
-   - [Yolov3](https://arxiv.org/abs/1804.02767)
+   - [Yolov3](https://github.com/ultralytics/yolov3)
 3. Image-to-image Translation
-   - [pix2pixGAN](https://arxiv.org/abs/1611.07004)
+   - [pix2pixGAN](https://github.com/phillipi/pix2pix)
 
 
 ## Citation
