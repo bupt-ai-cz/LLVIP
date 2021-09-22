@@ -4,7 +4,7 @@
 ## News
 
 
-- ⚡(2021-09-22): We have retrained and tested Yolov5l and Yolov3 on the updated dataset(30976 images). The results are displayed in README.
+- ⚡(2021-09-22): We have retrained and tested Yolov5 and Yolov3 on the updated dataset (30976 images). The results are displayed in README.
 - ⚡(2021-09-01): We have released the dataset, please visit [homepage](https://bupt-ai-cz.github.io/LLVIP/) for access to the dataset. (Note that we removed some low-quality images from the original dataset, and for this version there are 30976 images.)
 
 ---
