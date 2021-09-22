@@ -30,7 +30,7 @@ It is very challenging for various visual tasks such as image fusion, pedestrian
 
 ## Results
 We retrained and tested Yolov5l and Yolov3 on the updated dataset(30976 images).
-|model |      |Yolov5|      |      |Yolov3|      |
+|model |      Yolov5      |      |Yolov3|      |
 |------|:-----|------|-----|:-----|------|-----:|
 |      |mAP50 |maAP75|mAP  |mAP50 |maAP75|mAP   |
 |visible|0.908|0.564|0.527|0.871|0.455|0.466|
