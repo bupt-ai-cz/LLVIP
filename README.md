@@ -26,6 +26,15 @@ It is very challenging for various visual tasks such as image fusion, pedestrian
 3. Image-to-image Translation
    - [pix2pixGAN](https://github.com/phillipi/pix2pix)
 
+## Results
+We retrained and tested Yolov5l and Yolov3 on the updated dataset(30976 images).
+|model |      |Yolov5l|      |      |Yolov3|      |
+|------|:-----|------|-----|:-----|------|-----:|
+|      |mAP50 |maAP75|mAP  |mAP50 |maAP75|mAP   |
+|visible|0.908|0.564|0.527|0.871|0.455|0.466|
+|infrared|0.965|0.764|0.670|0.940|0.661|0.582|
+
+Where mAP50 means the mAP at IoU threshold of 0.5, mAP75 means the mAP at IoU threshold of 0.75, and mAP means the average of mAP at IoU threshold of 0.5 to 0.95, with an interval of 0.05.
 
 ## Citation
 If you use this data for your research, please cite our paper [LLVIP: A Visible-infrared Paired Dataset for Low-light Vision](https://arxiv.org/abs/2108.10831):
