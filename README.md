@@ -28,7 +28,7 @@ It is very challenging for various visual tasks such as image fusion, pedestrian
 3. Image-to-image Translation
    - [pix2pixGAN](https://github.com/phillipi/pix2pix)
 
-## Results
+## Pedestrian Detection Results （Supervised）
 We retrained and tested Yolov5l and Yolov3 on the updated dataset(30976 images).
 |model |      |Yolov5|      |      |Yolov3|      |
 |------|:-----|------|-----|:-----|------|-----:|
