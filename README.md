@@ -28,7 +28,9 @@ It is very challenging for various visual tasks such as image fusion, pedestrian
 3. Image-to-image Translation
    - [pix2pixGAN](https://github.com/phillipi/pix2pix)
 
-## Pedestrian Detection Results 
+## Image Fusion Results （being upodated）
+
+## Pedestrian Detection Results （being upodated）
 We retrained and tested Yolov5l and Yolov3 on the updated dataset(30976 images).
 |model |      |Yolov5l|      |      |Yolov3|      |
 |------|:-----|------|-----|:-----|------|-----:|
@@ -37,6 +39,8 @@ We retrained and tested Yolov5l and Yolov3 on the updated dataset(30976 images).
 |infrared|0.965|0.764|0.670|0.940|0.661|0.582|
 
 Where AP50 means the AP at IoU threshold of 0.5, AP75 means the AP at IoU threshold of 0.75, and AP means the average of AP at IoU threshold of 0.5 to 0.95, with an interval of 0.05.
+
+## Image-to-Image Translation Results （being upodated）
 
 ## Citation
 If you use this data for your research, please cite our paper [LLVIP: A Visible-infrared Paired Dataset for Low-light Vision](https://arxiv.org/abs/2108.10831):
