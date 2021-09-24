@@ -34,11 +34,16 @@ It is very challenging for various visual tasks such as image fusion, pedestrian
 We retrained and tested Yolov5l and Yolov3 on the updated dataset(30976 images).
 |model |      |Yolov5l|      |      |Yolov3|      |
 |------|:-----|------|-----|:-----|------|-----:|
-|      |AP50 |AP75|AP  |AP50 |AP75|AP   |
+||AP50|AP75|AP|AP50|AP75|AP|
 |visible|0.908|0.564|0.527|0.871|0.455|0.466|
 |infrared|0.965|0.764|0.670|0.940|0.661|0.582|
 
 Where AP50 means the AP at IoU threshold of 0.5, AP75 means the AP at IoU threshold of 0.75, and AP means the average of AP at IoU threshold of 0.5 to 0.95, with an interval of 0.05.
+
+![yolov5_yolov3](https://user-images.githubusercontent.com/33684330/134609510-0408375c-7f4e-458c-938c-dd8c58c2248f.jpg)
+The figure above shows the change of AP under different IoU thresholds. When the IoU threshold is higher than 0.7, the AP value drops rapidly. Besides, the infrared image highlights pedestrains and achieves a better effect than the visible image in the detection task, which not only proves the necessity of infrared images but also indicates that the performance of pedestrian detection algorithm is not good enough under low-light conditions.
+
+
 
 ## Image-to-Image Translation Results （being updated）
 
