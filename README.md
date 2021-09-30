@@ -4,6 +4,7 @@
 ## News
 
 
+- ⚡(2021-09-30): We have retrained and tested pix2pixGAN on the updated dataset (30976 images). The results are displayed in README.
 - ⚡(2021-09-22): We have retrained and tested Yolov5 and Yolov3 on the updated dataset (30976 images). The results are displayed in README.
 - ⚡(2021-09-01): We have released the dataset, please visit [homepage](https://bupt-ai-cz.github.io/LLVIP/) for access to the dataset. (Note that we removed some low-quality images from the original dataset, and for this version there are 30976 images.)
 
@@ -54,6 +55,13 @@ We also drew the miss rate-FPPI curve based on the test results and calculated l
 
 
 ## Image-to-Image Translation Results （being updated）
+We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The structure of generator is unet256, and the structure of discriminator is the basic PatchGAN as default. 
+|Dataset|SSIM|PSNR|
+|:-----:|:---|---:|
+|KAIST|0.6918|28.9935|
+|LLVIP|0.1757|10.7688|
+
+![pix2pix效果](https://user-images.githubusercontent.com/33684330/135420925-72b9722a-3838-437b-b1a7-5f9e81c91d85.png)
 
 ## Citation
 If you use this data for your research, please cite our paper [LLVIP: A Visible-infrared Paired Dataset for Low-light Vision](https://arxiv.org/abs/2108.10831):
