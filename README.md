@@ -86,7 +86,6 @@ We use [Yolov3](https://github.com/YunYang1994/tensorflow-yolov3) and [Yolov5](h
   __C.TEST.WEIGHT_FILE            = "./checkpoint/yolov3_test_loss=4.7528.ckpt-50"
                                     #replace here with your trained model.
   ```
-  You can directly use our trained model for evaluation, see `./checkpoint/yolov3_test_loss=4.7528.ckpt-50` for infrared data and `./checkpoint/yolov3_test_loss=8.0499.ckpt-50` for visible data.
 
   Then calculate mAP:
   ```
@@ -114,7 +113,7 @@ We use [Yolov3](https://github.com/YunYang1994/tensorflow-yolov3) and [Yolov5](h
   ```
   python val.py --data --img 1280 --weights last.pt --data LLVIP.yaml
   ```
-  Remember to put the trained model in the same folder as `val.py`. You can directly use our trained model for evaluation, see `./infrared.pt` for infrared data and `./visible.pt` for visible data.
+  Remember to put the trained model in the same folder as `val.py`.
 ### Results
 We retrained and tested Yolov5l and Yolov3 on the updated dataset(30976 images).
 |model |      |Yolov5l|      |      |Yolov3|      |
