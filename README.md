@@ -138,7 +138,28 @@ We also drew the miss rate-FPPI curve based on the test results and calculated l
 
 
 
-## Image-to-Image Translation Results （being updated）
+##  Image-to-Image Translation
+### pix2pixGAN
+- ①install requirements
+  ```
+  cd pix2pixGAN
+  pip install -r requirements.txt
+  ```
+- ②train pix2pixGAN on LLVIP dataset.
+  
+  - [Prepare dataset](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/docs/datasets.md)
+
+  - Train script
+  
+  ```
+  python train.py --dataroot ./path/to/data --name LLVIP --model pix2pix --direction AtoB --batch_size 8 --preprocess scale_width_and_crop --load_size 320 --      crop_size 256 --gpu_ids 0 --n_epochs 100 --n_epochs_decay 100
+  ```
+- Test pix2pixGAN on LLVIP dataset.
+  ```
+  python test.py --dataroot ./datasets/LLVIP --name LLVIP --model pix2pix --direction AtoB --gpu_ids 0 --preprocess scale_width_and_crop --load_size 320 --crop_size 256
+  ```
+  See `./pix2pixGAN/options` for more train and test options.
+### Results
 We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The structure of generator is unet256, and the structure of discriminator is the basic PatchGAN as default. 
 |Dataset|SSIM|PSNR|
 |:-----:|:---|---:|
