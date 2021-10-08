@@ -31,7 +31,91 @@ It is very challenging for various visual tasks such as image fusion, pedestrian
 
 ## Image Fusion Results （being updated）
 
-## Pedestrian Detection Results （being updated）
+## Pedestrian Detection
+### Start
+Clone this repo, download LLVIP dataset from the [homepage](https://bupt-ai-cz.github.io/LLVIP/) and install the dependent environment for yolov3 and yolov5 separately.
+```
+git clone https://github.com/bupt-ai-cz/LLVIP.git
+cd LLVIP
+```
+
+We use [Yolov3](https://github.com/YunYang1994/tensorflow-yolov3) and [Yolov5](https://docs.ultralytics.com/tutorials/train-custom-datasets/) as baseline. Python>=3.8 is required.
+
+### Yolov3:
+- ①Install requirements
+    ```
+    cd yolov3
+    pip install -r ./docs/requirements.txt
+    ```
+- ②Train yolov3 on LLVIP dataset
+
+  Three files are required as follows:
+  - `./data/dataset/LLVIP_train.txt`
+  - `./data/dataset/LLVIP_test.txt`
+    ```
+    xxx/xxx.jpg 18.19,6.32,424.13,421.83,20 323.86,2.65,640.0,421.94,20 
+    xxx/xxx.jpg 48,240,195,371,11 8,12,352,498,14
+    # image_path x_min, y_min, x_max, y_max, class_id  x_min, y_min ,..., class_id 
+    # make sure that x_max < width and y_max < height
+    ```
+    We provide a script named `xml2txt_yolov3.py` to convert xml file to txt file, remember to modify the file path before using.
+  - `./data/classes/LLVIP.names:`
+    ```
+    person
+    ```
+   Then edit your `./core/config.py` to make some necessary configurations.
+   ```
+   __C.YOLO.CLASSES                = "./data/classes/LLVIP.names"
+   __C.TRAIN.ANNOT_PATH            = "./data/dataset/LLVIP_train.txt"
+   __C.TEST.ANNOT_PATH             = "./data/dataset/LLVIP_test.txt"
+   ```
+   Then train from COCO weights:
+   ```
+   cd checkpoint
+   wget https://github.com/YunYang1994/tensorflow-yolov3/releases/download/v1.0/yolov3_coco.tar.gz
+   tar -xvf yolov3_coco.tar.gz
+   cd ..
+   python convert_weight.py --train_from_coco
+   python train.py
+   ```
+   The trained model will be saved in `./checkpoint` folder.
+- ③Evaluate on LLVIP dataset.
+
+  To apply your trained model, edit your `./core/config.py` as follows:
+  ```
+  __C.TEST.WEIGHT_FILE            = "./checkpoint/yolov3_test_loss=4.7528.ckpt-50"
+                                    #replace here with your trained model.
+  ```
+  You can directly use our trained model for evaluation, see `./checkpoint/yolov3_test_loss=4.7528.ckpt-50` for infrared data and `./checkpoint/yolov3_test_loss=8.0499.ckpt-50` for visible data.
+
+  Then calculate mAP:
+  ```
+  python evaluate.py
+  cd mAP
+  python main.py -na
+  ```
+ ### Yolov5:
+- ①install requirements
+    ```
+    cd yolov5
+    pip install -r requirements.txt
+    ```
+- ②Train yolov5 on LLVIP dataset
+  - File structure
+  - ![file structure](https://user-images.githubusercontent.com/33684330/136551790-0f962b2e-83c4-4981-9d29-b7d780267a8d.jpeg)
+    Put train data in train folder and test data in val folder as shown above. We have prepared the label file, no need to generate it yourself.
+
+  - Train from yolov5l weights:
+    ```
+    python train.py --img 1280 --batch 8 --epochs 200 --data LLVIP.yaml --weights yolov5l.pt --name LLVIP_export
+    ```
+    See more training options in `train.py`. The trained model will be saved in `./runs/train/LLVIP_export/weights` folder.
+- ③Evaluate on LLVIP dataset.
+  ```
+  python val.py --data --img 1280 --weights last.pt --data LLVIP.yaml
+  ```
+  Remember to put the trained model in the same folder as `val.py`. You can directly use our trained model for evaluation, see `./infrared.pt` for infrared data and `./visible.pt` for visible data.
+### Results
 We retrained and tested Yolov5l and Yolov3 on the updated dataset(30976 images).
 |model |      |Yolov5l|      |      |Yolov3|      |
 |------|:-----|------|-----|:-----|------|-----:|
