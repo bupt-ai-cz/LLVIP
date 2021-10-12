@@ -29,7 +29,7 @@ It is very challenging for various visual tasks such as image fusion, pedestrian
 3. Image-to-image Translation
    - [pix2pixGAN](https://github.com/phillipi/pix2pix)
 
-## Image Fusion Results （being updated）
+## Image Fusion Results 
 
 ## Pedestrian Detection
 ### Start
