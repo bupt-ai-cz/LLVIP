@@ -34,7 +34,7 @@ It is very challenging for various visual tasks such as image fusion, pedestrian
 ## Pedestrian Detection
 ### Start
 Clone this repo, download LLVIP dataset from the [homepage](https://bupt-ai-cz.github.io/LLVIP/) and install the dependent environment for yolov3 and yolov5 separately.
-```
+```bash
 git clone https://github.com/bupt-ai-cz/LLVIP.git
 cd LLVIP
 ```
@@ -42,16 +42,19 @@ cd LLVIP
 We use [Yolov3](https://github.com/YunYang1994/tensorflow-yolov3) and [Yolov5](https://docs.ultralytics.com/tutorials/train-custom-datasets/) as baseline. Python>=3.8 is required.
 
 ### Yolov3:
-- ①Install requirements
-    ```
+1. Install requirements
+
+    ```python
     cd yolov3
     pip install -r ./docs/requirements.txt
     ```
-- ②Train yolov3 on LLVIP dataset
+
+2. Train yolov3 on LLVIP dataset
 
   Three files are required as follows:
   - `./data/dataset/LLVIP_train.txt`
   - `./data/dataset/LLVIP_test.txt`
+    
     ```
     xxx/xxx.jpg 18.19,6.32,424.13,421.83,20 323.86,2.65,640.0,421.94,20 
     xxx/xxx.jpg 48,240,195,371,11 8,12,352,498,14
@@ -64,22 +67,23 @@ We use [Yolov3](https://github.com/YunYang1994/tensorflow-yolov3) and [Yolov5](h
     person
     ```
      Then edit your `./core/config.py` to make some necessary configurations.
-   ```
-   __C.YOLO.CLASSES                = "./data/classes/LLVIP.names"
-   __C.TRAIN.ANNOT_PATH            = "./data/dataset/LLVIP_train.txt"
-   __C.TEST.ANNOT_PATH             = "./data/dataset/LLVIP_test.txt"
-   ```
-   Then train from COCO weights:
-   ```
-   cd checkpoint
-   wget https://github.com/YunYang1994/tensorflow-yolov3/releases/download/v1.0/yolov3_coco.tar.gz
-   tar -xvf yolov3_coco.tar.gz
-   cd ..
-   python convert_weight.py --train_from_coco
-   python train.py
-   ```
-   The trained model will be saved in `./checkpoint` folder.
-- ③Evaluate on LLVIP dataset.
+       ```
+       __C.YOLO.CLASSES                = "./data/classes/LLVIP.names"
+       __C.TRAIN.ANNOT_PATH            = "./data/dataset/LLVIP_train.txt"
+       __C.TEST.ANNOT_PATH             = "./data/dataset/LLVIP_test.txt"
+       ```
+     Then train from COCO weights:
+       ```bash
+       cd checkpoint
+       wget https://github.com/YunYang1994/tensorflow-yolov3/releases/download/v1.0/yolov3_coco.tar.gz
+       tar -xvf yolov3_coco.tar.gz
+       cd ..
+       python convert_weight.py --train_from_coco
+       python train.py
+       ```
+     The trained model will be saved in `./checkpoint` folder.
+
+3. Evaluate on LLVIP dataset.
 
   To apply your trained model, edit your `./core/config.py` as follows:
   ```
@@ -88,34 +92,34 @@ We use [Yolov3](https://github.com/YunYang1994/tensorflow-yolov3) and [Yolov5](h
   ```
 
   Then calculate mAP:
-  ```
+  ```bash
   python evaluate.py
   cd mAP
   python main.py -na
   ```
  ### Yolov5:
-- ①install requirements
-    ```
+1. install requirements
+    ```bash
     cd yolov5
     pip install -r requirements.txt
     ```
-- ②Train yolov5 on LLVIP dataset
+2. Train yolov5 on LLVIP dataset
   - File structure
   ![file structure](https://user-images.githubusercontent.com/33684330/136551790-0f962b2e-83c4-4981-9d29-b7d780267a8d.jpeg)
     Put train data in train folder and test data in val folder as shown above. We have prepared the label file, no need to generate it yourself.
 
   - Train from yolov5l weights:
-    ```
+    ```bash
     python train.py --img 1280 --batch 8 --epochs 200 --data LLVIP.yaml --weights yolov5l.pt --name LLVIP_export
     ```
     See more training options in `train.py`. The trained model will be saved in `./runs/train/LLVIP_export/weights` folder.
-- ③Evaluate on LLVIP dataset.
-  ```
+3. Evaluate on LLVIP dataset.
+  ```bash
   python val.py --data --img 1280 --weights last.pt --data LLVIP.yaml
   ```
   Remember to put the trained model in the same folder as `val.py`.
 ### Results
-We retrained and tested Yolov5l and Yolov3 on the updated dataset(30976 images).
+We retrained and tested Yolov5l and Yolov3 on the updated dataset (30976 images).
 |model |      |Yolov5l|      |      |Yolov3|      |
 |------|:-----|------|-----|:-----|------|-----:|
 ||AP50|AP75|AP|AP50|AP75|AP|
@@ -135,33 +139,29 @@ We also drew the miss rate-FPPI curve based on the test results and calculated l
 
 ![yolov5_yolov3MR](https://user-images.githubusercontent.com/33684330/135218913-c0a6b668-b72b-4184-8b0f-b2ae37c9f6f6.jpg)
 
-
-
 ##  Image-to-Image Translation
 ### pix2pixGAN
-- ①install requirements
-  ```
+1. install requirements
+  ```bash
   cd pix2pixGAN
   pip install -r requirements.txt
   ```
-- ②train pix2pixGAN on LLVIP dataset.
-  
+2. train pix2pixGAN on LLVIP dataset.
   - [Prepare dataset](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/docs/datasets.md)
 
   - Train script
-  
-  ```
+  ```bash
   python train.py --dataroot ./path/to/data --name LLVIP --model pix2pix --direction AtoB --batch_size 8 --preprocess scale_width_and_crop --load_size 320 --      crop_size 256 --gpu_ids 0 --n_epochs 100 --n_epochs_decay 100
   ```
-- Test pix2pixGAN on LLVIP dataset.
-  ```
+3. Test pix2pixGAN on LLVIP dataset.
+  ```bash
   python test.py --dataroot ./datasets/LLVIP --name LLVIP --model pix2pix --direction AtoB --gpu_ids 0 --preprocess scale_width_and_crop --load_size 320 --crop_size 256
   ```
   See `./pix2pixGAN/options` for more train and test options.
 ### Results
 We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The structure of generator is unet256, and the structure of discriminator is the basic PatchGAN as default. 
 |Dataset|SSIM|PSNR|
-|:-----:|:---|---:|
+|:-----:|:--:|:--:|
 |KAIST|0.6918|28.9935|
 |LLVIP|0.1757|10.7688|
 
