@@ -156,6 +156,7 @@ We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The st
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/33684330/135420925-72b9722a-3838-437b-b1a7-5f9e81c91d85.png" height="480" width="600">
+</div>
 
 ## Citation
 If you use this data for your research, please cite our paper [LLVIP: A Visible-infrared Paired Dataset for Low-light Vision](https://arxiv.org/abs/2108.10831):
