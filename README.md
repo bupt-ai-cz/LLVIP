@@ -125,7 +125,9 @@ We also drew the miss rate-FPPI curve based on the test results and calculated l
 |visible|22.59%|37.70%|
 |infrared|10.66%|19.73%|
 
-![yolov5_yolov3MR](https://user-images.githubusercontent.com/33684330/135218913-c0a6b668-b72b-4184-8b0f-b2ae37c9f6f6.jpg)
+<div align="center">
+<img src="https://user-images.githubusercontent.com/33684330/135218913-c0a6b668-b72b-4184-8b0f-b2ae37c9f6f6.jpg" height="380" width="800">
+</div>
 
 ##  Image-to-Image Translation
 Baseline
@@ -150,9 +152,11 @@ Baseline
   See `./pix2pixGAN/options` for more train and test options.
 ### Results
 We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The structure of generator is unet256, and the structure of discriminator is the basic PatchGAN as default. 
+
 |Dataset|SSIM|PSNR|
 |:-----:|:--:|:--:|
 |LLVIP|0.1757|10.7688|
+
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/33684330/135420925-72b9722a-3838-437b-b1a7-5f9e81c91d85.png" height="480" width="600">
