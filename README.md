@@ -9,7 +9,7 @@
 
 ![figure1-LR](imgs/figure1-LR.png)
 
-## <center> Image Fusion </center>
+<div align='ceneter' > <font size='30'> Image Fusion </font></div>
 Baselines
    - [GTF](https://github.com/jiayi-ma/GTF)
    - [FusionGAN](https://github.com/jiayi-ma/FusionGAN)
