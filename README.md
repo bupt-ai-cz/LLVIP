@@ -152,7 +152,6 @@ Baseline
 We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The structure of generator is unet256, and the structure of discriminator is the basic PatchGAN as default. 
 |Dataset|SSIM|PSNR|
 |:-----:|:--:|:--:|
-|KAIST|0.6918|28.9935|
 |LLVIP|0.1757|10.7688|
 
 ![pix2pix效果](https://user-images.githubusercontent.com/33684330/135420925-72b9722a-3838-437b-b1a7-5f9e81c91d85.png)
