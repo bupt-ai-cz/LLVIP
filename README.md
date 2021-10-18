@@ -9,22 +9,17 @@
 
 ![figure1-LR](imgs/figure1-LR.png)
 
-## Baselines
-
-1. Image Fusion
+## Image Fusion 
+Baselines
    - [GTF](https://github.com/jiayi-ma/GTF)
    - [FusionGAN](https://github.com/jiayi-ma/FusionGAN)
    - [Densefuse](https://github.com/hli1221/imagefusion_densefuse)
    - [IFCNN](https://github.com/uzeful/IFCNN)
-2. Pedestrian Detection
-   - [Yolov5](https://github.com/ultralytics/yolov5)
-   - [Yolov3](https://github.com/ultralytics/yolov3)
-3. Image-to-image Translation
-   - [pix2pixGAN](https://github.com/phillipi/pix2pix)
-
-## Image Fusion Results 
 
 ## Pedestrian Detection
+Baselines
+   - [Yolov5](https://github.com/ultralytics/yolov5)
+   - [Yolov3](https://github.com/ultralytics/yolov3)
 ### Start
 Clone this repo, download LLVIP dataset from the [homepage](https://bupt-ai-cz.github.io/LLVIP/) and install the dependent environment for yolov3 and yolov5 separately.
 ```bash
@@ -133,6 +128,8 @@ We also drew the miss rate-FPPI curve based on the test results and calculated l
 ![yolov5_yolov3MR](https://user-images.githubusercontent.com/33684330/135218913-c0a6b668-b72b-4184-8b0f-b2ae37c9f6f6.jpg)
 
 ##  Image-to-Image Translation
+Baseline
+   - [pix2pixGAN](https://github.com/phillipi/pix2pix)
 ### pix2pixGAN
 1. install requirements
   ```bash
