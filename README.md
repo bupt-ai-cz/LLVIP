@@ -17,7 +17,8 @@ Baselines
    - [Densefuse](https://github.com/hli1221/imagefusion_densefuse)
    - [IFCNN](https://github.com/uzeful/IFCNN)
 
-<h2> <p align="center"> Pedestrian Detection </p> </h2>   
+<h2> <p align="center"> Pedestrian Detection </p> </h2> 
+
 Baselines
    - [Yolov5](https://github.com/ultralytics/yolov5)
    - [Yolov3](https://github.com/ultralytics/yolov3)
@@ -130,7 +131,8 @@ We also drew the miss rate-FPPI curve based on the test results and calculated l
 <img src="https://user-images.githubusercontent.com/33684330/135218913-c0a6b668-b72b-4184-8b0f-b2ae37c9f6f6.jpg" height="380" width="800">
 </div>
 
-<h2> <p align="center"> Image-to-Image Translation </p> </h2>    
+<h2> <p align="center"> Image-to-Image Translation </p> </h2> 
+
 Baseline
    - [pix2pixGAN](https://github.com/phillipi/pix2pix)
 ### pix2pixGAN
