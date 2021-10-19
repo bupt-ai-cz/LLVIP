@@ -9,6 +9,20 @@
 
 ![figure1-LR](imgs/figure1-LR.png)
 
+---
+
+## Citation
+If you use this data for your research, please cite our paper [LLVIP: A Visible-infrared Paired Dataset for Low-light Vision](https://arxiv.org/abs/2108.10831):
+
+```
+@article{jia2021llvip,
+  title={LLVIP: A Visible-infrared Paired Dataset for Low-light Vision},
+  author={Jia, Xinyu and Zhu, Chuang and Li, Minzhen and Tang, Wenqi and Zhou, Wenli},
+  journal={arXiv preprint arXiv:2108.10831},
+  year={2021}
+}
+```
+
 <h2> <p align="center"> Image Fusion </p> </h2>  
 
 Baselines
@@ -164,18 +178,6 @@ We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The st
 <div align="center">
 <img src="https://user-images.githubusercontent.com/33684330/135420925-72b9722a-3838-437b-b1a7-5f9e81c91d85.png" height="480" width="600">
 </div>
-
-## Citation
-If you use this data for your research, please cite our paper [LLVIP: A Visible-infrared Paired Dataset for Low-light Vision](https://arxiv.org/abs/2108.10831):
-
-```
-@article{jia2021llvip,
-  title={LLVIP: A Visible-infrared Paired Dataset for Low-light Vision},
-  author={Jia, Xinyu and Zhu, Chuang and Li, Minzhen and Tang, Wenqi and Zhou, Wenli},
-  journal={arXiv preprint arXiv:2108.10831},
-  year={2021}
-}
-```
 
 ## License
 This LLVIP Dataset is made freely available to academic and non-academic entities for non-commercial purposes such as academic research, teaching, scientific publications, or personal experimentation. Permission is granted to use the data given that you agree to our [license terms](Term%20of%20Use%20and%20License.md).
