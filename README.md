@@ -66,16 +66,7 @@ We use [Yolov3](https://github.com/YunYang1994/tensorflow-yolov3) and [Yolov5](h
     # make sure that x_max < width and y_max < height
     ```
     We provide a script named `xml2txt_yolov3.py` to convert xml file to txt file, remember to modify the file path before using.
-  - `./data/classes/LLVIP.names:`
-    ```
-    person
-    ```
-     Then edit your `./core/config.py` to make some necessary configurations.
-       ```
-       __C.YOLO.CLASSES                = "./data/classes/LLVIP.names"
-       __C.TRAIN.ANNOT_PATH            = "./data/dataset/LLVIP_train.txt"
-       __C.TEST.ANNOT_PATH             = "./data/dataset/LLVIP_test.txt"
-       ```
+
      Then train from COCO weights:
        ```bash
        cd checkpoint
@@ -124,13 +115,9 @@ We use [Yolov3](https://github.com/YunYang1994/tensorflow-yolov3) and [Yolov5](h
   Remember to put the trained model in the same folder as `val.py`.
 ### Results
 We retrained and tested Yolov5l and Yolov3 on the updated dataset (30976 images).
-|model |      |Yolov5l|      |      |Yolov3|      |
-|------|:-----|------|-----|:-----|------|-----:|
-||AP50|AP75|AP|AP50|AP75|AP|
-|visible|0.908|0.564|0.527|0.871|0.455|0.466|
-|infrared|0.965|0.764|0.670|0.940|0.661|0.582|
+![AP](https://user-images.githubusercontent.com/33684330/138012320-3340bf17-481a-4d69-a8a9-fc7427055cf4.jpg)
 
-Where AP50 means the AP at IoU threshold of 0.5, AP75 means the AP at IoU threshold of 0.75, and AP means the average of AP at IoU threshold of 0.5 to 0.95, with an interval of 0.05.
+Where AP means the average of AP at IoU threshold of 0.5 to 0.95, with an interval of 0.05.
 
 ![yolov5_yolov3](https://user-images.githubusercontent.com/33684330/134609510-0408375c-7f4e-458c-938c-dd8c58c2248f.jpg)
 The figure above shows the change of AP under different IoU thresholds. When the IoU threshold is higher than 0.7, the AP value drops rapidly. Besides, the infrared image highlights pedestrains and achieves a better effect than the visible image in the detection task, which not only proves the necessity of infrared images but also indicates that the performance of visible-image pedestrian detection algorithm is not good enough under low-light conditions.
