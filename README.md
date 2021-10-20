@@ -36,80 +36,45 @@ Baselines
 Baselines
    - [Yolov5](https://github.com/ultralytics/yolov5)
    - [Yolov3](https://github.com/ultralytics/yolov3)
-### Start
-Clone this repo, download LLVIP dataset from the [homepage](https://bupt-ai-cz.github.io/LLVIP/) and install the dependent environment for yolov3 and yolov5 separately.
-```bash
-git clone https://github.com/bupt-ai-cz/LLVIP.git
-cd LLVIP
-```
-
-We use [Yolov3](https://github.com/YunYang1994/tensorflow-yolov3) and [Yolov5](https://docs.ultralytics.com/tutorials/train-custom-datasets/) as baseline. Python>=3.8 is required.
-
-### Yolov3:
-1. Install requirements
-
-    ```python
-    cd yolov3
-    pip install -r ./docs/requirements.txt
-    ```
-
-2. Train yolov3 on LLVIP dataset
-
-  Three files are required as follows:
-  - `./data/dataset/LLVIP_train.txt`
-  - `./data/dataset/LLVIP_test.txt`
-    
-    ```
-    xxx/xxx.jpg 18.19,6.32,424.13,421.83,20 323.86,2.65,640.0,421.94,20 
-    xxx/xxx.jpg 48,240,195,371,11 8,12,352,498,14
-    # image_path x_min, y_min, x_max, y_max, class_id  x_min, y_min ,..., class_id 
-    # make sure that x_max < width and y_max < height
-    ```
-    We provide a script named `xml2txt_yolov3.py` to convert xml file to txt file, remember to modify the file path before using.
-
-     Then train from COCO weights:
-       ```bash
-       cd checkpoint
-       wget https://github.com/YunYang1994/tensorflow-yolov3/releases/download/v1.0/yolov3_coco.tar.gz
-       tar -xvf yolov3_coco.tar.gz
-       cd ..
-       python convert_weight.py --train_from_coco
-       python train.py
-       ```
-     The trained model will be saved in `./checkpoint` folder.
-
-3. Evaluate on LLVIP dataset.
-
-  To apply your trained model, edit your `./core/config.py` as follows:
-  ```
-  __C.TEST.WEIGHT_FILE            = "./checkpoint/yolov3_test_loss=4.7528.ckpt-50"
-                                    #replace here with your trained model.
-  ```
-
-  Then calculate mAP:
+## Yolov5
+### Preparation
+- install requirements
   ```bash
-  python evaluate.py
-  cd mAP
-  python main.py -na
+  cd yolov5
+  pip install -r requirements.txt
   ```
- ### Yolov5:
-1. install requirements
-    ```bash
-    cd yolov5
-    pip install -r requirements.txt
-    ```
-2. Train yolov5 on LLVIP dataset
-  - File structure
-  ![file structure](https://user-images.githubusercontent.com/33684330/136551790-0f962b2e-83c4-4981-9d29-b7d780267a8d.jpeg)
-    Put train data in train folder and test data in val folder as shown above. We have prepared the label file, no need to generate it yourself.
-
-  - Train from yolov5l weights:
-    ```bash
-    python train.py --img 1280 --batch 8 --epochs 200 --data LLVIP.yaml --weights yolov5l.pt --name LLVIP_export
-    ```
-    See more training options in `train.py`. The trained model will be saved in `./runs/train/LLVIP_export/weights` folder.
-3. Evaluate on LLVIP dataset.
-  ```bash
+- File structure
+  ```
+  yolov5
+  ├── ...
+  └──LLVIP
+     ├── labels
+     |   ├──train
+     |   |  ├── 010001.txt
+     |   |  ├── 010002.txt
+     |   |  └── ...
+     |   └──val
+     |      ├── 190001.txt
+     |      ├── 190002.txt
+     |      └── ...
+     └── images
+         ├──train
+         |   ├── 010001.jpg
+         |   ├── 010002.jpg
+         |   └── ...
+         └── val
+             ├── 190001.jpg
+             ├── 190002.jpg
+             └── ...
+  ```
+  We provide a script named `xml2txt_yolov5.py` to convert xml files to txt files, remember to modify the file path before using.
+### Train
+  ```
+  python train.py --img 1280 --batch 8 --epochs 200 --data LLVIP.yaml --weights yolov5l.pt --name LLVIP_export
+  ```
+See more training options in `train.py`. The trained model will be saved in `./runs/train/LLVIP_export/weights` folder.
+### Test
+  ```
   python val.py --data --img 1280 --weights last.pt --data LLVIP.yaml
   ```
   Remember to put the trained model in the same folder as `val.py`.
@@ -136,20 +101,38 @@ We also drew the miss rate-FPPI curve based on the test results and calculated l
 
 Baseline
    - [pix2pixGAN](https://github.com/phillipi/pix2pix)
-### pix2pixGAN
-1. install requirements
+## pix2pixGAN
+### Preparation
+- Install requirements
   ```bash
   cd pix2pixGAN
   pip install -r requirements.txt
   ```
-2. train pix2pixGAN on LLVIP dataset.
-  - [Prepare dataset](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/docs/datasets.md)
-
-  - Train script
-  ```bash
-  python train.py --dataroot ./path/to/data --name LLVIP --model pix2pix --direction AtoB --batch_size 8 --preprocess scale_width_and_crop --load_size 320 --      crop_size 256 --gpu_ids 0 --n_epochs 100 --n_epochs_decay 100
+- [Prepare dataset](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/docs/datasets.md)
+- File structure
   ```
-3. Test pix2pixGAN on LLVIP dataset.
+  pix2pixGAN
+  ├── ...
+  └──datasets
+     ├── ...
+     └──LLVIP
+        ├── train
+        |   ├── 010001.jpg
+        |   ├── 010002.jpg
+        |   ├── 010003.jpg
+        |   └── ...
+        └── test
+            ├── 190001.jpg
+            ├── 190002.jpg
+            ├── 190003.jpg
+            └── ...
+  ```
+
+### Train
+  ```bash
+  python train.py --dataroot ./datasets/LLVIP --name LLVIP --model pix2pix --direction AtoB --batch_size 8 --preprocess scale_width_and_crop --load_size 320 --crop_size 256 --gpu_ids 0 --n_epochs 100 --n_epochs_decay 100
+  ```
+### Test
   ```bash
   python test.py --dataroot ./datasets/LLVIP --name LLVIP --model pix2pix --direction AtoB --gpu_ids 0 --preprocess scale_width_and_crop --load_size 320 --crop_size 256
   ```
