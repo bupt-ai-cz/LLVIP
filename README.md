@@ -72,13 +72,13 @@ Baselines
   ```bash
   python train.py --img 1280 --batch 8 --epochs 200 --data LLVIP.yaml --weights yolov5l.pt --name LLVIP_export
   ```
-See more training options in `train.py`. The trained model will be saved in `./runs/train/LLVIP_export/weights` folder.
+See more training options in `train.py`. The pretrained model `yolov5l.pt` can be downloaded from [here](https://github.com/ultralytics/yolov5/releases). The trained model will be saved in `./runs/train/LLVIP_export/weights` folder.
 ### Test
   ```bash
   python val.py --data --img 1280 --weights last.pt --data LLVIP.yaml
   ```
   Remember to put the trained model in the same folder as `val.py`.
-- Click [Here](yolov3_tutorial.md) for the tutorial of Yolov3.
+- Click [Here](yolov3/README.md) for the tutorial of Yolov3.
 ### Results
 We retrained and tested Yolov5l and Yolov3 on the updated dataset (30976 images).
 ![AP](https://user-images.githubusercontent.com/33684330/138012320-3340bf17-481a-4d69-a8a9-fc7427055cf4.jpg)
