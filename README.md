@@ -91,10 +91,7 @@ Where AP means the average of AP at IoU threshold of 0.5 to 0.95, with an interv
 The figure above shows the change of AP under different IoU thresholds. When the IoU threshold is higher than 0.7, the AP value drops rapidly. Besides, the infrared image highlights pedestrains and achieves a better effect than the visible image in the detection task, which not only proves the necessity of infrared images but also indicates that the performance of visible-image pedestrian detection algorithm is not good enough under low-light conditions.
 
 We also drew the miss rate-FPPI curve based on the test results and calculated log average miss rate.
-|log average miss rate |Yolov5l|Yolov3|
-|:-----:|:-----|-----:|
-|visible|22.59%|37.70%|
-|infrared|10.66%|19.73%|
+![MR](https://user-images.githubusercontent.com/33684330/138281822-ea7dd310-bb9d-4197-8dfe-f17bb4534986.jpeg)
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/33684330/135218913-c0a6b668-b72b-4184-8b0f-b2ae37c9f6f6.jpg" height="380" width="800">
