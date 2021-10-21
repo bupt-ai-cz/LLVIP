@@ -38,6 +38,7 @@ Baselines
    - [Yolov3](https://github.com/ultralytics/yolov3)
 ## Yolov5
 ### Preparation
+#### Linux and Python>=3.6.0
 - Install requirements
   ```bash
   git clone https://github.com/bupt-ai-cz/LLVIP.git
