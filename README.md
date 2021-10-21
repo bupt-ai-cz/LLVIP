@@ -38,9 +38,10 @@ Baselines
    - [Yolov3](https://github.com/ultralytics/yolov3)
 ## Yolov5
 ### Preparation
-- install requirements
+- Install requirements
   ```bash
-  cd yolov5
+  git clone https://github.com/bupt-ai-cz/LLVIP.git
+  cd LLVIP/yolov5
   pip install -r requirements.txt
   ```
 - File structure
