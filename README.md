@@ -94,9 +94,7 @@ We also calculated log average miss rate based on the test results and drew the 
 ![MR](https://user-images.githubusercontent.com/33684330/138281822-ea7dd310-bb9d-4197-8dfe-f17bb4534986.jpeg)
 
 <div align="center">
-
-<img src="https://user-images.githubusercontent.com/33684330/138307401-7226455d-10db-4644-93a2-60fcc18795f9.png" height="400" width="500">
-
+<img src="https://user-images.githubusercontent.com/33684330/138312218-274810d5-0191-4fbc-abfe-01736dc285bf.png" height="400" width="500">
 </div>
 
 <h2> <p align="center"> Image-to-Image Translation </p> </h2> 
