@@ -1,0 +1,2 @@
+model_checkpoint_path: "yolov3_test_loss=2530.1914.ckpt-1"
+all_model_checkpoint_paths: "yolov3_test_loss=2530.1914.ckpt-1"
