@@ -69,15 +69,16 @@ Baselines
   ```
   We provide a script named `xml2txt_yolov5.py` to convert xml files to txt files, remember to modify the file path before using.
 ### Train
-  ```
+  ```bash
   python train.py --img 1280 --batch 8 --epochs 200 --data LLVIP.yaml --weights yolov5l.pt --name LLVIP_export
   ```
 See more training options in `train.py`. The trained model will be saved in `./runs/train/LLVIP_export/weights` folder.
 ### Test
-  ```
+  ```bash
   python val.py --data --img 1280 --weights last.pt --data LLVIP.yaml
   ```
   Remember to put the trained model in the same folder as `val.py`.
+- Click [Here](yolov3_tutorial.md) for the tutorial of Yolov3.
 ### Results
 We retrained and tested Yolov5l and Yolov3 on the updated dataset (30976 images).
 ![AP](https://user-images.githubusercontent.com/33684330/138012320-3340bf17-481a-4d69-a8a9-fc7427055cf4.jpg)
@@ -139,11 +140,7 @@ Baseline
   See `./pix2pixGAN/options` for more train and test options.
 ### Results
 We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The structure of generator is unet256, and the structure of discriminator is the basic PatchGAN as default. 
-
-|Dataset|SSIM|PSNR|
-|:-----:|:--:|:--:|
-|LLVIP|0.1757|10.7688|
-
+![psnr_ssim](https://user-images.githubusercontent.com/33684330/138233570-1440a5bf-7a05-4e96-b8ab-fc32a9c59748.jpeg)
 
 <div align="center">
 <img src="https://user-images.githubusercontent.com/33684330/135420925-72b9722a-3838-437b-b1a7-5f9e81c91d85.png" height="480" width="600">
