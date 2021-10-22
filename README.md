@@ -86,8 +86,9 @@ We retrained and tested Yolov5l and Yolov3 on the updated dataset (30976 images)
 ![AP](https://user-images.githubusercontent.com/33684330/138012320-3340bf17-481a-4d69-a8a9-fc7427055cf4.jpg)
 
 Where AP means the average of AP at IoU threshold of 0.5 to 0.95, with an interval of 0.05.
-
-![yolov5_yolov3](https://user-images.githubusercontent.com/33684330/134609510-0408375c-7f4e-458c-938c-dd8c58c2248f.jpg)
+<div align="center">
+<img src="https://user-images.githubusercontent.com/33684330/138388453-9953c403-4a5f-4b45-a488-e44fcec7b955.png" height="400" width="500">
+</div>
 The figure above shows the change of AP under different IoU thresholds. When the IoU threshold is higher than 0.7, the AP value drops rapidly. Besides, the infrared image highlights pedestrains and achieves a better effect than the visible image in the detection task, which not only proves the necessity of infrared images but also indicates that the performance of visible-image pedestrian detection algorithm is not good enough under low-light conditions.
 
 We also calculated log average miss rate based on the test results and drew the miss rate-FPPI curve.
