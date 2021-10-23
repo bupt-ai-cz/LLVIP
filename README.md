@@ -84,22 +84,22 @@ See more training options in `train.py`. The pretrained model `yolov5l.pt` can b
 ### Results
 We retrained and tested Yolov5l and Yolov3 on the updated dataset (30976 images).
 <div align="center">
-<img src="https://user-images.githubusercontent.com/33684330/138012320-3340bf17-481a-4d69-a8a9-fc7427055cf4.jpg" height="140" width="700">
+<img src="https://user-images.githubusercontent.com/33684330/138012320-3340bf17-481a-4d69-a8a9-fc7427055cf4.jpg" height="130" width="700">
 </div>
 
 Where AP means the average of AP at IoU threshold of 0.5 to 0.95, with an interval of 0.05.
 <div align="center">
-<img src="https://user-images.githubusercontent.com/33684330/138388453-9953c403-4a5f-4b45-a488-e44fcec7b955.png" height="540" width="700">
+<img src="https://user-images.githubusercontent.com/33684330/138388453-9953c403-4a5f-4b45-a488-e44fcec7b955.png" height="510" width="700">
 </div>
 The figure above shows the change of AP under different IoU thresholds. When the IoU threshold is higher than 0.7, the AP value drops rapidly. Besides, the infrared image highlights pedestrains and achieves a better effect than the visible image in the detection task, which not only proves the necessity of infrared images but also indicates that the performance of visible-image pedestrian detection algorithm is not good enough under low-light conditions.
 
 We also calculated log average miss rate based on the test results and drew the miss rate-FPPI curve.
 <div align="center">
-<img src="https://user-images.githubusercontent.com/33684330/138281822-ea7dd310-bb9d-4197-8dfe-f17bb4534986.jpeg" height="120" width="700">
+<img src="https://user-images.githubusercontent.com/33684330/138281822-ea7dd310-bb9d-4197-8dfe-f17bb4534986.jpeg" height="110" width="700">
 </div>
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/33684330/138312218-274810d5-0191-4fbc-abfe-01736dc285bf.png" height="540" width="700">
+<img src="https://user-images.githubusercontent.com/33684330/138312218-274810d5-0191-4fbc-abfe-01736dc285bf.png" height="510" width="700">
 </div>
 
 <h2> <p align="center"> Image-to-Image Translation </p> </h2> 
@@ -144,10 +144,12 @@ Baseline
   See `./pix2pixGAN/options` for more train and test options.
 ### Results
 We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The structure of generator is unet256, and the structure of discriminator is the basic PatchGAN as default. 
-![psnr_ssim](https://user-images.githubusercontent.com/33684330/138233570-1440a5bf-7a05-4e96-b8ab-fc32a9c59748.jpeg)
+<div align="center">
+<img src="https://user-images.githubusercontent.com/33684330/138233570-1440a5bf-7a05-4e96-b8ab-fc32a9c59748.jpeg" height="120" width="700">
+</div>
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/33684330/135420925-72b9722a-3838-437b-b1a7-5f9e81c91d85.png" height="480" width="600">
+<img src="https://user-images.githubusercontent.com/33684330/135420925-72b9722a-3838-437b-b1a7-5f9e81c91d85.png" height="510" width="700">
 </div>
 
 ## License
