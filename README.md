@@ -149,7 +149,7 @@ We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The st
 </div>
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/33684330/135420925-72b9722a-3838-437b-b1a7-5f9e81c91d85.png" height="510" width="700">
+<img src="https://user-images.githubusercontent.com/33684330/135420925-72b9722a-3838-437b-b1a7-5f9e81c91d85.png" height="610" width="700">
 </div>
 
 ## License
