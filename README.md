@@ -15,10 +15,11 @@
 If you use this data for your research, please cite our paper [LLVIP: A Visible-infrared Paired Dataset for Low-light Vision](https://arxiv.org/abs/2108.10831):
 
 ```
-@article{jia2021llvip,
+@inproceedings{jia2021llvip,
   title={LLVIP: A Visible-infrared Paired Dataset for Low-light Vision},
   author={Jia, Xinyu and Zhu, Chuang and Li, Minzhen and Tang, Wenqi and Zhou, Wenli},
-  journal={arXiv preprint arXiv:2108.10831},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={3496--3504},
   year={2021}
 }
 ```
