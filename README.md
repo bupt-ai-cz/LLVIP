@@ -32,6 +32,53 @@ Baselines
    - [Densefuse](https://github.com/hli1221/imagefusion_densefuse)
    - [IFCNN](https://github.com/uzeful/IFCNN)
 
+## FusionGAN
+### Preparation
+- Install requirements
+  ```bash
+  git clone https://github.com/bupt-ai-cz/LLVIP.git
+  cd LLVIP/FusionGAN
+  # Create your virtual environment using anaconda
+  conda create -n FusionGAN python=3.7
+  conda activate FusionGAN
+  
+  conda install matplotlib scipy==1.2.1 tensorflow-gpu==1.14.0 
+  pip install opencv-python
+  sudo apt install libgl1-mesa-glx
+  ```
+- File structure
+  ```
+  FusionGAN
+  ├── ...
+  ├── Test_LLVIP_ir
+  |   ├── 190001.jpg
+  |   ├── 190002.jpg
+  |   └── ...
+  ├── Test_LLVIP_vi
+  |   ├── 190001.jpg
+  |   ├── 190002.jpg
+  |   └── ...
+  ├── Train_LLVIP_ir
+  |   ├── 010001.jpg
+  |   ├── 010002.jpg
+  |   └── ...
+  └── Train_LLVIP_vi
+      ├── 010001.jpg
+      ├── 010002.jpg
+      └── ...
+  ```
+### Train
+  ```bash
+  python main.py --epoch 10 --batch_size 32
+  ```
+See more training options in 'main.py'.
+### Test
+  ```bash
+  python test_one_image.py
+  ```
+Remember to put pretrained model in your 'checkpoint' folder and change corresponding model name in 'test_one_image.py'.
+To acquire complete LLVIP dataset, please visit https://bupt-ai-cz.github.io/LLVIP/.
+
 <h2> <p align="center"> Pedestrian Detection </p> </h2> 
 
 Baselines
