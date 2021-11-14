@@ -1,0 +1,2 @@
+model_checkpoint_path: "densefuse_model_bs2_epoch4_all_weight_1e3.ckpt"
+all_model_checkpoint_paths: "densefuse_model_bs2_epoch4_all_weight_1e3.ckpt"
