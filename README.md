@@ -131,6 +131,9 @@ To acquire complete LLVIP dataset, please visit https://bupt-ai-cz.github.io/LLV
   ```
 Check and modify training/testing options in `main.py`. Before training/testing, you need to rename the images in LLVIP dataset and put them in the designated folder. We have provided a script named `rename.py` to rename the images and save them in the `datasets` or `test` folder. Checkpoints are saved in `./models/densefuse_gray/`. To acquire complete LLVIP dataset, please visit https://bupt-ai-cz.github.io/LLVIP/.
 
+## IFCNN
+Please visit https://github.com/uzeful/IFCNN.
+
 <h2> <p align="center"> Pedestrian Detection </p> </h2> 
 
 Baselines
