@@ -184,7 +184,7 @@ See more training options in `train.py`. The pretrained model `yolov5l.pt` can b
   ```
   Remember to put the trained model in the same folder as `val.py`.
   
-  Our trained model can be downloaded from here: https://drive.google.com/file/d/1SPbr0PDiItape602-g-bstkX0P7NZo0q/view?usp=sharing
+  Our trained model can be downloaded from here: [Google-Drive-Yolov3-model](https://drive.google.com/file/d/1SPbr0PDiItape602-g-bstkX0P7NZo0q/view?usp=sharing) or [BaiduYun-Yolov3-model](https://pan.baidu.com/s/1eZcyugmpo_3VZjd3wpwcow) (code: ine5)
 - Click [Here](yolov3/README.md) for the tutorial of Yolov3.
 ### Results
 We retrained and tested Yolov5l and Yolov3 on the updated dataset (30976 images).
