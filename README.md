@@ -183,6 +183,8 @@ See more training options in `train.py`. The pretrained model `yolov5l.pt` can b
   python val.py --data --img 1280 --weights last.pt --data LLVIP.yaml
   ```
   Remember to put the trained model in the same folder as `val.py`.
+  
+  Our trained model can be downloaded from here: https://drive.google.com/file/d/1SPbr0PDiItape602-g-bstkX0P7NZo0q/view?usp=sharing
 - Click [Here](yolov3/README.md) for the tutorial of Yolov3.
 ### Results
 We retrained and tested Yolov5l and Yolov3 on the updated dataset (30976 images).
