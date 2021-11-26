@@ -37,4 +37,3 @@ python evaluate.py
 cd mAP
 python main.py -na
 ```
-Our trained model can be downloaded from here: https://drive.google.com/file/d/1-BYauAZGXhw7PjKp8M4CHlnMNYqm8n7J/view?usp=sharing
