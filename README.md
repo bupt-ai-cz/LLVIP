@@ -247,6 +247,11 @@ Baseline
   python test.py --dataroot ./datasets/LLVIP --name LLVIP --model pix2pix --direction AtoB --gpu_ids 0 --preprocess scale_width_and_crop --load_size 320 --crop_size 256
   ```
   See `./pix2pixGAN/options` for more train and test options.
+
+
+<img src='imgs/LLVIP.gif' align="right" width=512>
+<br>
+
 ### Results
 We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The structure of generator is unet256, and the structure of discriminator is the basic PatchGAN as default. 
 <div align="center">
