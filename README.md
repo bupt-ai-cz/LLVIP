@@ -250,7 +250,6 @@ Baseline
 
 
 <img src='imgs/LLVIP.gif' align="right" width=512>
-<br>
 
 ### Results
 We retrained and tested pix2pixGAN  on the updated dataset(30976 images). The structure of generator is unet256, and the structure of discriminator is the basic PatchGAN as default. 
