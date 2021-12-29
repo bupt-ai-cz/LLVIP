@@ -2,7 +2,7 @@
 [Project](https://bupt-ai-cz.github.io/LLVIP/) | [Arxiv](https://arxiv.org/abs/2108.10831) | [Benchmarks](https://paperswithcode.com/dataset/llvip)|[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/llvip-a-visible-infrared-paired-dataset-for/pedestrian-detection-on-llvip)](https://paperswithcode.com/sota/pedestrian-detection-on-llvip?p=llvip-a-visible-infrared-paired-dataset-for) | [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Codes%20and%20Data%20for%20Our%20Paper:%20"LLVIP:%20A%20Visible-infrared%20Paired%20Dataset%20for%20Low-light%20Vision"%20&url=https://github.com/bupt-ai-cz/LLVIP)  
 
 ## News
-- ⚡(2021-12-25): We released a Kaggle Community Competition "[Find Person in the Dark!](https://www.kaggle.com/c/find-person-in-the-dark)" based on part of LLVIP dataset. Welcome playing and having fun! Attention: only the visible-image data we uploaded in Kaggle platform is allowed (the infrared images in LLVIP or other external data are forbidden).
+- ⚡(2021-12-25): We released a Kaggle Community Competition "[Find Person in the Dark!](https://www.kaggle.com/c/find-person-in-the-dark)" based on part of LLVIP dataset. Welcome playing and having fun! Attention: only the visible-image data we uploaded in Kaggle platform is allowed to use (the infrared images in LLVIP or other external data are forbidden).
 - ⚡(2021-11-24): Pedestrian detection models were released. 
 - ⚡(2021-09-01): We have released the dataset, please visit [homepage](https://bupt-ai-cz.github.io/LLVIP/) for access to the dataset. (Note that we removed some low-quality images from the original dataset, and for this version there are 30976 images.)
 
