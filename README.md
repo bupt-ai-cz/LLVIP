@@ -4,7 +4,7 @@
 ## News
 - ⚡(2021-12-25): We released a Kaggle Community Competition "[Find Person in the Dark!](https://www.kaggle.com/c/find-person-in-the-dark)" based on part of LLVIP dataset. Welcome playing and having fun! Attention: only the visible-image data we uploaded in Kaggle platform is allowed to use (the infrared images in LLVIP or other external data are forbidden).
 - ⚡(2021-11-24): Pedestrian detection models were released. 
-- ⚡(2021-09-01): We have released the dataset, please visit [homepage](https://bupt-ai-cz.github.io/LLVIP/) for access to the dataset. (Note that we removed some low-quality images from the original dataset, and for this version there are 30976 images.)
+- ⚡(2021-09-01): We have released the dataset, please visit [homepage](https://bupt-ai-cz.github.io/LLVIP/) to get the dataset. (Note that we removed some low-quality images from the original dataset, and for this version there are 30976 images.)
 
 ---
 
