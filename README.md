@@ -150,6 +150,8 @@ Baselines
   pip install -r requirements.txt
   ```
 - File structure
+
+  The training set of LLVIP is used for training the yolov5 model and the testing set of LLVIP is used for the validation of the yolov5 model.
   ```
   yolov5
   ├── ...
