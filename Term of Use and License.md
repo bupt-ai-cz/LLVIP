@@ -2,7 +2,7 @@
 
 ## Note
 
-Our data is mainly collected from 26 scenes, including 24 dark scenes and 2 daytime scenes. In each scene, we try to make different images contain different pedestrians, or same pedestrian with different poses or positions. However, it should be noted that the images of the same scene have the similar background.
+Our data is mainly collected from 26 scenes, including 24 dark scenes and 2 daytime scenes. In each scene, we try to make different images contain different pedestrians, or same pedestrian with different poses or positions. 
 
 ## License
 
