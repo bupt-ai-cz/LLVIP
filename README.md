@@ -85,7 +85,7 @@ To acquire complete LLVIP dataset, please visit https://bupt-ai-cz.github.io/LLV
 ### Preparation
 - Install requirements
   ```bash
-  git clone https://github.com/bupt-ai-cz/LLVIP.git
+  git clone https://github.com/bupt-ai-cz/LLVIP
   cd LLVIP/imagefusion_densefuse
   
   # Create your virtual environment using anaconda
