@@ -14,7 +14,7 @@
          ├──train.txt
          └──test.txt
   ```
-  We provide a script named `xml2txt_yolov3.py` to convert xml file to txt file, remember to modify the file path before using.
+  We provide a [toolbox](https://github.com/bupt-ai-cz/LLVIP/blob/main/toolbox/toolbox_readme.md) for converting annotation files to a txt file in yolov3 format.
 ### Train 
 ```bash
 cd checkpoint
