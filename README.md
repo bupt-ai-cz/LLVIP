@@ -176,7 +176,7 @@ Baselines
              ├── 190002.jpg
              └── ...
   ```
-  We provide a script named `xml2txt_yolov5.py` to convert xml files to txt files, remember to modify the file path before using.
+  We provide a [toolbox](https://github.com/bupt-ai-cz/LLVIP/blob/main/toolbox/toolbox_readme.md) for converting annotation files to txt files in yolov5 format.
 ### Train
   ```bash
   python train.py --img 1280 --batch 8 --epochs 200 --data LLVIP.yaml --weights yolov5l.pt --name LLVIP_export
