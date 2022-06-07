@@ -274,7 +274,9 @@ This LLVIP Dataset is made freely available to academic and non-academic entitie
 
 ## Call For Contributions
 
-Welcome to point out errors in data annotation. Please refer to the [annotation tutorial](https://github.com/SantJay/LLVIP-1/blob/main/annotation%20tutorial.md). Also welcome to contribute more data annotations, such as segmentation. Please contact us.
+Welcome to point out errors in data annotation. If you want to modify the label, please refer to the [annotation tutorial](https://github.com/SantJay/LLVIP-1/blob/main/annotation%20tutorial.md), and email us the corrected label file.
+
+More annotation forms are also welcome (such as segmentation), please contact us.
 
 ## Contact
 
