@@ -274,7 +274,7 @@ This LLVIP Dataset is made freely available to academic and non-academic entitie
 
 ## Call For Contributions
 
-Welcome to point out errors in data annotation. Also welcome to contribute more data annotations, such as segmentation. Please contact us.
+Welcome to point out errors in data annotation. Please refer to the annotation tutorial. Also welcome to contribute more data annotations, such as segmentation. Please contact us.
 
 ## Contact
 
