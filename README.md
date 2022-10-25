@@ -18,12 +18,15 @@
 If you use this data for your research, please cite our paper [LLVIP: A Visible-infrared Paired Dataset for Low-light Vision](https://arxiv.org/abs/2108.10831):
 
 ```
-@inproceedings{jia2021llvip,
-  title={LLVIP: A Visible-infrared Paired Dataset for Low-light Vision},
-  author={Jia, Xinyu and Zhu, Chuang and Li, Minzhen and Tang, Wenqi and Zhou, Wenli},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
-  pages={3496--3504},
-  year={2021}
+@misc{https://doi.org/10.48550/arxiv.2108.10831,
+  doi = {10.48550/ARXIV.2108.10831},
+  url = {https://arxiv.org/abs/2108.10831},
+  author = {Jia, Xinyu and Zhu, Chuang and Li, Minzhen and Tang, Wenqi and Liu, Shengjie and Zhou, Wenli},
+  keywords = {Computer Vision and Pattern Recognition (cs.CV), Artificial Intelligence (cs.AI), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  title = {LLVIP: A Visible-infrared Paired Dataset for Low-light Vision},
+  publisher = {arXiv},
+  year = {2021},  
+  copyright = {arXiv.org perpetual, non-exclusive license}
 }
 ```
 
