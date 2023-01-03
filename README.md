@@ -26,6 +26,8 @@ If you use this data for your research, please cite our paper [LLVIP: A Visible-
   year={2021}
 }
 ```
+or
+
 ```
 @misc{https://doi.org/10.48550/arxiv.2108.10831,
   doi = {10.48550/ARXIV.2108.10831}, 
