@@ -293,6 +293,9 @@ Welcome to point out errors in data annotation. If you want to modify the label,
 
 More annotation forms are also welcome (such as segmentation), please contact us.
 
+## Acknowledgments
+Thanks [XueZ-phd](https://github.com/XueZ-phd) for his contribution to LLVIP dataset. He corrected the imperfect annotations in the dataset.
+
 ## Contact
 
 email: shengjie.Liu@bupt.edu.cn, czhu@bupt.edu.cn, jiaxinyujxy@qq.com, tangwenqi@bupt.edu.cn
